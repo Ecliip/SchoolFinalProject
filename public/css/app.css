@@ -1,0 +1,63 @@
+header {
+  border-bottom: 1px solid #2d3748;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 3rem;
+  padding: 0 3rem;
+}
+header nav .right {
+  display: flex;
+  justify-content: center;
+}
+header nav .right .name {
+  margin-right: 3rem;
+}
+header nav a:not(:last-of-type) {
+  margin-right: 2rem;
+}
+header .banner {
+  background-color: #4a5568;
+  height: 40vh;
+  width: 100%;
+  background-image: url("/images/design/proto.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a, :link, :visited {
+  text-decoration: none;
+  color: black;
+}
+
+.xy-centered {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 2rem;
+  position: relative;
+  min-height: 100vh;
+}

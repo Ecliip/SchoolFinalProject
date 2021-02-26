@@ -1,0 +1,38 @@
+header {
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items:
+    border-bottom: 1px solid #2d3748;
+
+    & nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 3rem;
+        padding: 0 3rem;
+
+        & .right {
+            display: flex;
+            justify-content: center;
+
+            & .name {
+                margin-right: 3rem;
+            }
+        }
+
+        & a:not(:last-of-type) {
+            margin-right: 2rem;
+        }
+    }
+
+    & .banner {
+        background-color: #4a5568;
+        height: 40vh;
+        width: 100%;
+        background-image: url('/images/design/proto.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+}
