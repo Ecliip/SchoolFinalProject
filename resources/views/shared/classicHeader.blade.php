@@ -10,7 +10,6 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body>
-<div class="container">
     <header>
         @if (Route::has('login'))
             <nav class="nav">
@@ -35,3 +34,4 @@
 
         </div>
     </header>
+    <div class="container">

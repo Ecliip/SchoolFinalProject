@@ -1,8 +1,11 @@
 @import "components/header";
+@import "components/footer";
 @import "components/forms";
 @import "global";
 @import "layouts/xy-centered";
 @import "utilities/positioning";
+@import "variables";
+@import "layouts/classic";
 
 * {
     margin: 0;
