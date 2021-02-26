@@ -1,5 +1,21 @@
+.xy-centered {
+  background-color: #1D3557;
+}
+
+.admin-container {
+  min-height: 100vh;
+}
+
+.container {
+  min-height: 60vh;
+  width: 70vw;
+  background-color: #457b9d;
+  margin: auto;
+}
+
 header {
   border-bottom: 1px solid #2d3748;
+  color: #F1FAEE;
 }
 header nav {
   display: flex;
@@ -12,6 +28,7 @@ header nav {
 header nav .right {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 header nav .right .name {
   margin-right: 3rem;
@@ -111,10 +128,6 @@ footer .banner {
 }
 
 .xy-centered {
-  background-color: #1D3557;
-}
-
-.xy-centered {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -132,13 +145,6 @@ a, :link, :visited {
 
 h2 a {
   color: #F1FAEE;
-}
-
-.container {
-  min-height: 60vh;
-  width: 70vw;
-  background-color: #457b9d;
-  margin: auto;
 }
 
 * {

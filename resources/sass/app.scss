@@ -1,14 +1,14 @@
+@import "layouts/all-layouts";
+
 @import "components/header";
 @import "components/footer";
 @import "components/buttons";
 @import "components/images";
 @import "components/forms";
 @import "global";
-@import "layouts/xy-centered";
 @import "utilities/positioning";
 @import "variables";
 @import "typography";
-@import "layouts/classic";
 
 * {
     margin: 0;
