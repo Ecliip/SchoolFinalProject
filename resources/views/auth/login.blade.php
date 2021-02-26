@@ -1,11 +1,18 @@
 @extends('layouts.xy-centered')
 @section('content')
-<form class="form form__email" method="post" action="{{route('login')}}">
-    @csrf
-    <input type="email" name="email" placeholder="email" required >
-    <input type="password" name="password" placeholder="password" required >
-    <button type="submit">Submit</button>
-</form>
+<div class="form-container">
+    <h2>Entrar al <a href="{{route('home.page')}}">supercars.web</a></h2>
+    <div class="icon-box">
+        <img src="{{asset('images/design/i-escudo.png')}}">
+    </div>
+    <form class="form form__email" method="post" action="{{route('login')}}">
+        @csrf
+        <input type="email" name="email" placeholder="email" required >
+        <input type="password" name="password" placeholder="password" required >
+        <button class="btn" type="submit">Entrar</button>
+    </form>
+    <a href="{{url('forgot-password')}}">Has olvidado tu contrasena?</a>
+</div>
 @endsection
 
 

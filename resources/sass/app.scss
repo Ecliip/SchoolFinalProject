@@ -1,10 +1,13 @@
 @import "components/header";
 @import "components/footer";
+@import "components/buttons";
+@import "components/images";
 @import "components/forms";
 @import "global";
 @import "layouts/xy-centered";
 @import "utilities/positioning";
 @import "variables";
+@import "typography";
 @import "layouts/classic";
 
 * {
@@ -22,4 +25,5 @@ body {
     font-size: 2rem;
     position: relative;
     min-height: 100vh;
+    background-color: #a8dadc;
 }

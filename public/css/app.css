@@ -70,15 +70,48 @@ footer .banner {
   background-position: center;
 }
 
-form {
+.btn {
+  padding: 1rem 2rem;
+  margin: 1.5rem;
+  margin-left: auto;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.icon-box {
+  margin: 2rem;
+}
+.icon-box img {
+  display: block;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.form-container {
+  background-color: #F1FAEE;
+  padding: 3rem 2rem;
+  border-radius: 5px;
+  background-image: linear-gradient(189deg, #E63946 33%, #F1FAEE 33% 100%);
+}
+.form-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.form-container form input[type=text], .form-container form input[type=email], .form-container form input[type=password] {
+  width: 40rem;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+.form-container form input:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
 
-a, :link, :visited {
-  text-decoration: none;
+.xy-centered {
+  background-color: #1D3557;
 }
 
 .xy-centered {
@@ -87,8 +120,25 @@ a, :link, :visited {
   display: flex;
 }
 
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+a, :link, :visited {
+  text-decoration: none;
+}
+
+h2 a {
+  color: #F1FAEE;
+}
+
 .container {
   min-height: 60vh;
+  width: 70vw;
+  background-color: #457b9d;
+  margin: auto;
 }
 
 * {
@@ -105,4 +155,5 @@ body {
   font-size: 2rem;
   position: relative;
   min-height: 100vh;
+  background-color: #a8dadc;
 }
