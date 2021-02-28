@@ -9,7 +9,12 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function car_models() {
+    public function carModels() {
         return $this->hasMany(CarModel::class);
     }
+
+     public function cars() {
+        return $this->hasMany(Car::class);
+    }
+
 }

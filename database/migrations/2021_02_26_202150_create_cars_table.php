@@ -25,6 +25,9 @@ class CreateCarsTable extends Migration
             $table->enum('traccion', ['Fwd', 'Rwd', 'Awd', 'x_4wd', 'x_4x4']);
             $table->date('year');
             $table->boolean('isNew');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('car_model_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

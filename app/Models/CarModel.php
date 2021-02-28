@@ -9,7 +9,15 @@ class CarModel extends Model
 {
     use HasFactory;
 
+    public function brand() {
+        return $this->belongsTo(Brand::class);
+    }
+
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function cars() {
+        return $this->hasMany(Car::class);
     }
 }
