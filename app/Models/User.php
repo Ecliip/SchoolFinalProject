@@ -18,6 +18,15 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
