@@ -1,6 +1,19 @@
 @extends('layouts.admin')
 @section('content')
-    <p>Dashboard page</p>
+    <h2>Add category</h2>
+    <form class="form form--dashboard" action="{{route('add.category')}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="text" name="category" placeholder="category">
+        @error('category')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
+        <input type="file" name="photo" placeholder="category">
+        <textarea name="description"></textarea>
+        @error('description')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
+    </form>
+
 @endsection
 
 

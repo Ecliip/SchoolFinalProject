@@ -127,6 +127,22 @@ footer .banner {
   margin-bottom: 1rem;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form input[type=text], .form input[type=email], .form input[type=password] {
+  width: 40rem;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+.form input:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
 .xy-centered {
   justify-content: center;
   align-items: center;

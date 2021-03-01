@@ -26,6 +26,25 @@
     }
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & input[type='text'],
+    & input[type='email'],
+    & input[type='password'] {
+        width: 40rem;
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        border-radius: 5px;
+    }
+    & input:not(:last-of-type) {
+        margin-bottom: 1rem;
+    }
+}
+
 
 
 
