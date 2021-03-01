@@ -26,10 +26,10 @@ class CreateCarsTable extends Migration
             $table->date('year');
             $table->boolean('isNew');
             $table->boolean('isSold');
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('car_model_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('car_model_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

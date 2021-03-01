@@ -19,6 +19,7 @@ class CreateCarModelsTable extends Migration
             $table->string('photo_sm');
             $table->string('photo_md');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

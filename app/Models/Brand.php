@@ -9,11 +9,13 @@ class Brand extends Model
 {
     use HasFactory;
 
-    public function carModels() {
+    public function carModels()
+    {
         return $this->hasMany(CarModel::class);
     }
 
-    public function cars() {
+    public function cars()
+    {
         return $this->hasMany(Car::class);
     }
 
