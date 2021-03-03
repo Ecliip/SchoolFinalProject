@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CategoryController::class, 'showAll'])->name('dashboard');
-Route::post('add-category', [CategoryController::class, 'add'])->name('add.category');
+Route::post('category/add', [CategoryController::class, 'add'])->name('add.category');
+Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('delete.category');
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');

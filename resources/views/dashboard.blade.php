@@ -2,7 +2,7 @@
 @section('content')
     @if(session('success'))
         <div class="notification__success">
-            Success! Has podido agregar una nueva categoría
+            {{session('success')}}
         </div>
     @endif
     <h2>Add category</h2>
@@ -34,7 +34,7 @@
             </div>
             <div class="buttons-group">
                 <a href="#">Edit</a>
-                <a href="#">Delete</a>
+                <a href="{{route('delete.category', $category->id)}}">Delete</a>
             </div>
         </div>
         @endforeach

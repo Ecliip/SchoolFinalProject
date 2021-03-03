@@ -40,4 +40,10 @@ class CategoryController extends Controller
         return redirect()->back()->with('success', 'Category was added successfully');
     }
 
+    public function delete($id) {
+        $category = Category::find($id);
+        unlink($category->photo_sm);
+        Category::find($id)->delete();
+        return redirect()->back()->with('success', 'Category was deleted');
+    }
 }
