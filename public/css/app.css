@@ -163,6 +163,18 @@ h2 a {
   color: #F1FAEE;
 }
 
+.image-box-sm {
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-box-sm img {
+  max-width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;

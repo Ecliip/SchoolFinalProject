@@ -1,19 +1,45 @@
 @extends('layouts.admin')
 @section('content')
+    @if(session('success'))
+        <div class="notification__success">
+            Success! Has podido agregar una nueva categoría
+        </div>
+    @endif
     <h2>Add category</h2>
-    <form class="form form--dashboard" action="{{route('add.category')}}" method="post" enctype="multipart/form-data">
+    <form class="form form--dashboard" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" name="category" placeholder="category">
+        <input type="text" name="category" placeholder="category name">
         @error('category')
             <span class="text-danger">{{$message}}</span>
         @enderror
-        <input type="file" name="photo" placeholder="category">
+        <input type="file" name="photo" id="photo_input" placeholder="category">
+        @error('photo')
+        <span class="text-danger">{{$message}}</span>
+        @enderror
         <textarea name="description"></textarea>
         @error('description')
         <span class="text-danger">{{$message}}</span>
         @enderror
+
+        <button type="submit">Submit</button>
     </form>
 
+    <div class="category">
+        <h2>Puede gestionar todas las categorias disponibles aqui</h2>
+        @foreach($categories as $category)
+        <div class="category__item">
+            <h3 class="category__name">{{$category->category}}</h3>
+            <div class="image-box-sm">
+                <img src="{{asset($category->photo_sm)}}">
+            </div>
+            <div class="buttons-group">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    {{$categories->links()}}
 @endsection
 
 

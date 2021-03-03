@@ -1,0 +1,14 @@
+@import "variables";
+
+.image-box-sm {
+ width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+     & img {
+        max-width: 100%;
+     }
+}
