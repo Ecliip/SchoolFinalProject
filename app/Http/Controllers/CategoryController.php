@@ -20,6 +20,7 @@ class CategoryController extends Controller
             'category'=>'required|min:5',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
+            'photo' => 'required'
         ]);
 
         $image = $request->file('photo');
@@ -55,6 +56,7 @@ class CategoryController extends Controller
     public function delete($id) {
         $category = Category::find($id);
         unlink($category->photo_sm);
+        unlink($category->photo_md);
         Category::find($id)->delete();
         return redirect()->back()->with('success', 'Category was deleted');
     }
