@@ -32,10 +32,19 @@ class CategoryController extends Controller
             $constraint->aspectRatio();
         })->save($imgPathMd.$imgName);
 
+        $generatedNameSm = hexdec(uniqid());
+        $imgExtensionSm = strtolower($image->getClientOriginalExtension());
+        $imgNameSm = $generatedNameSm.'.'.$imgExtensionSm;
+        $imgPathSm = 'images/categories/sm/';
+        $imgSmPathAndName = $imgPathSm.$imgNameSm;
+        Image::make($image)->resize(300, null, function ($constraint){
+            $constraint->aspectRatio();
+        })->save($imgPathSm.$imgNameSm);
+
         Category::insert([
             'category' => $request->category,
             'description' => $request->description,
-            'photo_sm' => $imgMdPathAndName,
+            'photo_sm' => $imgSmPathAndName,
             'photo_md' => $imgMdPathAndName,
             'created_at' =>Carbon::now()
         ]);
