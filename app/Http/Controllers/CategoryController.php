@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category as Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+
 
 class CategoryController extends Controller
 {
@@ -24,16 +26,17 @@ class CategoryController extends Controller
         $generatedName = hexdec(uniqid());
         $imgExtension = strtolower($image->getClientOriginalExtension());
         $imgName = $generatedName.'.'.$imgExtension;
-        $imgPath = 'images/categories/';
-        $imgPathAndName = $imgPath.$imgName;
-        $image->move($imgPath, $imgName);
-
+        $imgPathMd = 'images/categories/md/';
+        $imgMdPathAndName = $imgPathMd.$imgName;
+        Image::make($image)->resize(600, null, function ($constraint){
+            $constraint->aspectRatio();
+        })->save($imgPathMd.$imgName);
 
         Category::insert([
             'category' => $request->category,
             'description' => $request->description,
-            'photo_sm' => $imgPathAndName,
-            'photo_md' => $imgPathAndName,
+            'photo_sm' => $imgMdPathAndName,
+            'photo_md' => $imgMdPathAndName,
             'created_at' =>Carbon::now()
         ]);
 
