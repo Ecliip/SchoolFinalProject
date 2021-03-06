@@ -69,22 +69,46 @@
         </div>
 
         <div class="wrapped-col">
-            <h2>Añadir una Marca</h2>
-            <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
+            <h2>Añadir un Modelo</h2>
+            <form class="row g-3" action="{{route('add.car-model')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="categoryField" class="form-label">Marca</label>
-                    <input type="text" name="brand" class="form-control" id="categoryField">
-                    @error('brand')
+                    <label for="modelName" class="form-label">Model</label>
+                    <input type="text" name="model" class="form-control" id="modelName">
+                    @error('model')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="modelDescription" class="form-label">Descripcion</label>
+                    <textarea name="description" class="form-control" id="modelDescription" rows="3"></textarea>
                     @error('description')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="selectCategory" class="form-label">Elige tipo de coche</label>
+                    <select class="form-select" name="theCategory" id="selectCategory" aria-label="Elegir una categoria">
+                        <option selected value="-1">Elige tipo de coche</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->category}}</option>
+                        @endforeach
+                        @error('theCategory')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="selectModel" class="form-label">Elige marca</label>
+                    <select class="form-select" name="theBrand" id="selectModel" aria-label="Elegir una marca">
+                        <option selected value="-1">Elige marca deseada</option>
+                        @foreach($brands as $brand)
+                            <option value="{{$brand->id}}">{{$brand->brand}}</option>
+                        @endforeach
+                        @error('theBrand')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Default file input example</label>

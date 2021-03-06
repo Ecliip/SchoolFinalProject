@@ -11,6 +11,7 @@ use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
+// TODO have to manage exceptions https://laravel.com/docs/8.x/errors#the-exception-handler
     public function showAll() {
         $categories = Category::latest()->paginate(2);
         $brands = Brand::latest()->paginate(2);
