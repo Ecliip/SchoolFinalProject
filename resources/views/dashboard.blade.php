@@ -184,17 +184,20 @@
 
         @if($carModels)
             <div class="wrapped-col">
-                <h2>Marcas</h2>
+                <h2>Modelos</h2>
                 @foreach($carModels as $carModel)
                     <div class="category__item">
                         <h3 class="category__name">{{$carModel->carModel}}</h3>
                         <div class="image-box-sm">
                             <img src="{{asset($carModel->photo_sm)}}">
                         </div>
+                        <div>Categoria: {{$carModel->category->category}}</div>
+                        <div>Marca: {{$carModel->brand->brand}}</div>
                         <div class="buttons-group">
                             <a href="#">Edit</a>
                             <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>
                         </div>
+
                     </div>
                 @endforeach
                 {{$carModels->links()}}
