@@ -25,7 +25,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
+                    <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')
                     <span class="text-danger">{{$message}}</span>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="wrapped-col">
-            <h2>Añadir una marcaa</h2>
+            <h2>Añadir una marca</h2>
             <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
@@ -56,7 +56,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
+                    <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')
                     <span class="text-danger">{{$message}}</span>
@@ -83,38 +83,38 @@
                     <label for="modelDescription" class="form-label">Descripcion</label>
                     <textarea name="description" class="form-control" id="modelDescription" rows="3"></textarea>
                     @error('description')
-                    <span class="text-danger">{{$message}}</span>
+                        <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="selectCategory" class="form-label">Elige tipo de coche</label>
                     <select class="form-select" name="theCategory" id="selectCategory" aria-label="Elegir una categoria">
-                        <option selected value="-1">Elige tipo de coche</option>
+                        <option selected value=-1>Elige tipo de coche</option>
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->category}}</option>
+                        <option value={{$category->id}}>{{$category->category}}</option>
                         @endforeach
                         @error('theCategory')
-                        <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger">{{$message}}</span>
                         @enderror
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="selectModel" class="form-label">Elige marca</label>
                     <select class="form-select" name="theBrand" id="selectModel" aria-label="Elegir una marca">
-                        <option selected value="-1">Elige marca deseada</option>
+                        <option selected value=-1>Elige marca deseada</option>
                         @foreach($brands as $brand)
-                            <option value="{{$brand->id}}">{{$brand->brand}}</option>
+                            <option value={{$brand->id}}>{{$brand->brand}}</option>
                         @endforeach
                         @error('theBrand')
-                        <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger">{{$message}}</span>
                         @enderror
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
+                    <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')
-                    <span class="text-danger">{{$message}}</span>
+                        <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="col-auto">
@@ -181,6 +181,25 @@
             {{$brands->links()}}
         </div>
             @endif
+
+        @if($carModels)
+            <div class="wrapped-col">
+                <h2>Marcas</h2>
+                @foreach($carModels as $carModel)
+                    <div class="category__item">
+                        <h3 class="category__name">{{$carModel->carModel}}</h3>
+                        <div class="image-box-sm">
+                            <img src="{{asset($carModel->photo_sm)}}">
+                        </div>
+                        <div class="buttons-group">
+                            <a href="#">Edit</a>
+                            <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>
+                        </div>
+                    </div>
+                @endforeach
+                {{$carModels->links()}}
+            </div>
+        @endif
     </div>
 @endsection
 

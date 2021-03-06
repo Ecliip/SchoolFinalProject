@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\CarModel;
 use App\Models\Category as Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class CategoryController extends Controller
     public function showAll() {
         $categories = Category::latest()->paginate(2);
         $brands = Brand::latest()->paginate(2);
-        return view('dashboard')->with(compact('categories', 'brands'));
+        $carModels = CarModel::latest()->paginate(2);
+        return view('dashboard')->with(compact('categories', 'brands', 'carModels'));
     }
 
     public function add(Request $request) {
