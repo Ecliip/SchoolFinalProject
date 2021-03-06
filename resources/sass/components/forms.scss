@@ -34,8 +34,9 @@
 
     & input[type='text'],
     & input[type='email'],
-    & input[type='password'] {
-        width: 40rem;
+    & input[type='password'],
+    & textarea {
+        width: 100%;
         padding: .5rem 1rem;
         font-size: 2rem;
         border-radius: 5px;

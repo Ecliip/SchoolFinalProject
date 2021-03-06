@@ -1,3 +1,18 @@
 @import "xy-centered";
 @import "admin";
 @import "classic";
+
+.the-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 2rem 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    & .wrapped-col {
+        flex: 30vw 25vw;
+    }
+
+    & .wrapped-col:not(:last-of-type) {
+        margin-right: 2rem;
+    }
+}

@@ -13,6 +13,20 @@
   margin: auto;
 }
 
+.the-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 2rem 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.the-wrapper .wrapped-col {
+  flex: 30vw 25vw;
+}
+.the-wrapper .wrapped-col:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
 header {
   border-bottom: 1px solid #2d3748;
   color: #F1FAEE;
@@ -133,8 +147,8 @@ footer .banner {
   justify-content: center;
   align-items: center;
 }
-.form input[type=text], .form input[type=email], .form input[type=password] {
-  width: 40rem;
+.form input[type=text], .form input[type=email], .form input[type=password], .form textarea {
+  width: 100%;
   padding: 0.5rem 1rem;
   font-size: 2rem;
   border-radius: 5px;

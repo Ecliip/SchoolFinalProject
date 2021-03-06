@@ -5,45 +5,121 @@
             {{session('success')}}
         </div>
     @endif
-    <h2>Añadir una categoria</h2>
-    <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label for="categoryField" class="form-label">Email</label>
-            <input type="text" name="category" class="form-control" id="categoryField">
+    <div class="the-wrapper">
+        <div class="wrapped-col">
+            <h2>Añadir una categoria</h2>
+            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="categoryField" class="form-label">Email</label>
+                    <input type="text" name="category" class="form-control" id="categoryField">
+                    @error('category')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    @error('description')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" name="photo" type="file" id="formFile">
+                    @error('photo')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Subir</button>
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+        <div class="wrapped-col">
+            <h2>Añadir una categoria</h2>
+            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="categoryField" class="form-label">Email</label>
+                    <input type="text" name="category" class="form-control" id="categoryField">
+                    @error('category')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    @error('description')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" name="photo" type="file" id="formFile">
+                    @error('photo')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Subir</button>
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" name="photo" type="file" id="formFile">
+
+        <div class="wrapped-col">
+            <h2>Añadir una categoria</h2>
+            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="categoryField" class="form-label">Email</label>
+                    <input type="text" name="category" class="form-control" id="categoryField">
+                    @error('category')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    @error('description')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" name="photo" type="file" id="formFile">
+                    @error('photo')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Subir</button>
+                </div>
+            </form>
         </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Subir</button>
-        </div>
-    </form>
+    </div>
 
 
 
-    <form class="form form--dashboard" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="text" name="category" placeholder="category name">
-        @error('category')
-            <span class="text-danger">{{$message}}</span>
-        @enderror
-        <input type="file" name="photo" id="photo_input" style="width: 20rem," placeholder="category">
-        @error('photo')
-        <span class="text-danger">{{$message}}</span>
-        @enderror
-        <textarea name="description"></textarea>
-        @error('description')
-        <span class="text-danger">{{$message}}</span>
-        @enderror
+{{--// TODO considering to delete--}}
+{{--    <form class="form form--dashboard" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">--}}
+{{--        @csrf--}}
+{{--        <input type="text" name="category" placeholder="category name">--}}
+{{--        @error('category')--}}
+{{--            <span class="text-danger">{{$message}}</span>--}}
+{{--        @enderror--}}
+{{--        <input type="file" name="photo" id="photo_input" style="width: 20rem," placeholder="category">--}}
+{{--        @error('photo')--}}
+{{--        <span class="text-danger">{{$message}}</span>--}}
+{{--        @enderror--}}
+{{--        <textarea name="description"></textarea>--}}
+{{--        @error('description')--}}
+{{--        <span class="text-danger">{{$message}}</span>--}}
+{{--        @enderror--}}
 
-        <button type="submit">Submit</button>
-    </form>
+{{--        <button type="submit">Submit</button>--}}
+{{--    </form>--}}
 
     <div class="category">
         <h2>Puede gestionar todas las categorias disponibles aqui</h2>
