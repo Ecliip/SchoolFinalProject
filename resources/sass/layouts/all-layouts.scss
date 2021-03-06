@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     justify-content: center;
     & .wrapped-col {
-        flex: 30vw 25vw;
+        flex: 1 1 30rem;
     }
 
     & .wrapped-col:not(:last-of-type) {

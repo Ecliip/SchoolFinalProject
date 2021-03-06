@@ -21,7 +21,7 @@
   justify-content: center;
 }
 .the-wrapper .wrapped-col {
-  flex: 30vw 25vw;
+  flex: 1 1 30rem;
 }
 .the-wrapper .wrapped-col:not(:last-of-type) {
   margin-right: 2rem;

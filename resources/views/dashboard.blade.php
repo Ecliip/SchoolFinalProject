@@ -11,7 +11,7 @@
             <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="categoryField" class="form-label">Email</label>
+                    <label for="categoryField" class="form-label">Categoria</label>
                     <input type="text" name="category" class="form-control" id="categoryField">
                     @error('category')
                     <span class="text-danger">{{$message}}</span>
@@ -38,13 +38,13 @@
         </div>
 
         <div class="wrapped-col">
-            <h2>Añadir una categoria</h2>
-            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+            <h2>Añadir una marcaa</h2>
+            <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="categoryField" class="form-label">Email</label>
-                    <input type="text" name="category" class="form-control" id="categoryField">
-                    @error('category')
+                    <label for="categoryField" class="form-label">Marca</label>
+                    <input type="text" name="brand" class="form-control" id="categoryField">
+                    @error('brand')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -69,13 +69,13 @@
         </div>
 
         <div class="wrapped-col">
-            <h2>Añadir una categoria</h2>
-            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+            <h2>Añadir una Marca</h2>
+            <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="categoryField" class="form-label">Email</label>
-                    <input type="text" name="category" class="form-control" id="categoryField">
-                    @error('category')
+                    <label for="categoryField" class="form-label">Marca</label>
+                    <input type="text" name="brand" class="form-control" id="categoryField">
+                    @error('brand')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -121,22 +121,43 @@
 {{--        <button type="submit">Submit</button>--}}
 {{--    </form>--}}
 
-    <div class="category">
-        <h2>Puede gestionar todas las categorias disponibles aqui</h2>
-        @foreach($categories as $category)
-        <div class="category__item">
-            <h3 class="category__name">{{$category->category}}</h3>
-            <div class="image-box-sm">
-                <img src="{{asset($category->photo_sm)}}">
-            </div>
-            <div class="buttons-group">
-                <a href="#">Edit</a>
-                <a href="{{route('delete.category', $category->id)}}">Delete</a>
-            </div>
+    <div class="the-wrapper">
+        <div class="wrapped-col">
+            <h2>Categorias</h2>
+            @foreach($categories as $category)
+                <div class="category__item">
+                    <h3 class="category__name">{{$category->category}}</h3>
+                    <div class="image-box-sm">
+                        <img src="{{asset($category->photo_sm)}}">
+                    </div>
+                    <div class="buttons-group">
+                        <a href="#">Edit</a>
+                        <a href="{{route('delete.category', $category->id)}}">Delete</a>
+                    </div>
+                </div>
+            @endforeach
+            {{$categories->links()}}
         </div>
-        @endforeach
+
+        @if($brands)
+        <div class="wrapped-col">
+            <h2>Marcas</h2>
+            @foreach($brands as $brand)
+                <div class="category__item">
+                    <h3 class="category__name">{{$brand->brand}}</h3>
+                    <div class="image-box-sm">
+                        <img src="{{asset($brand->photo_sm)}}">
+                    </div>
+                    <div class="buttons-group">
+                        <a href="#">Edit</a>
+                        <a href="{{route('delete.brand', $brand->id)}}">Delete</a>
+                    </div>
+                </div>
+            @endforeach
+            {{$brands->links()}}
+        </div>
+            @endif
     </div>
-    {{$categories->links()}}
 @endsection
 
 

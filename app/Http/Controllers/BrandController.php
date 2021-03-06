@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Brand;
-use App\Models\Category as Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-
-class CategoryController extends Controller
+class BrandController extends Controller
 {
     public function showAll() {
-        $categories = Category::latest()->paginate(2);
         $brands = Brand::latest()->paginate(2);
-        return view('dashboard')->with(compact('categories', 'brands'));
+        return view('dashboard')->with(compact('brands'));
     }
 
     public function add(Request $request) {
         $request->validate([
-            'category'=>'required|min:5',
+            'brand'=>'required|min:5',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required'
@@ -29,7 +27,7 @@ class CategoryController extends Controller
         $generatedName = hexdec(uniqid());
         $imgExtension = strtolower($image->getClientOriginalExtension());
         $imgName = $generatedName.'.'.$imgExtension;
-        $imgPathMd = 'images/categories/md/';
+        $imgPathMd = 'images/brands/md/';
         $imgMdPathAndName = $imgPathMd.$imgName;
         Image::make($image)->resize(600, null, function ($constraint){
             $constraint->aspectRatio();
@@ -38,28 +36,28 @@ class CategoryController extends Controller
         $generatedNameSm = hexdec(uniqid());
         $imgExtensionSm = strtolower($image->getClientOriginalExtension());
         $imgNameSm = $generatedNameSm.'.'.$imgExtensionSm;
-        $imgPathSm = 'images/categories/sm/';
+        $imgPathSm = 'images/brands/sm/';
         $imgSmPathAndName = $imgPathSm.$imgNameSm;
         Image::make($image)->resize(300, null, function ($constraint){
             $constraint->aspectRatio();
         })->save($imgPathSm.$imgNameSm);
 
-        Category::insert([
-            'category' => $request->category,
+        Brand::insert([
+            'brand' => $request->brand,
             'description' => $request->description,
             'photo_sm' => $imgSmPathAndName,
             'photo_md' => $imgMdPathAndName,
             'created_at' =>Carbon::now()
         ]);
 
-        return redirect()->back()->with('success', 'Category was added successfully');
+        return redirect()->back()->with('success', 'Brand was added successfully');
     }
 
     public function delete($id) {
-        $category = Category::find($id);
-        unlink($category->photo_sm);
-        unlink($category->photo_md);
-        Category::find($id)->delete();
-        return redirect()->back()->with('success', 'Category was deleted');
+        $brand = Brand::find($id);
+        unlink($brand->photo_sm);
+        unlink($brand->photo_md);
+        Brand::find($id)->delete();
+        return redirect()->back()->with('success', 'Brand was deleted');
     }
 }
