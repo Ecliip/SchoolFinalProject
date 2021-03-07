@@ -1,6 +1,9 @@
+@import '../variables';
+
 .container {
+    //padding: 2rem 0;
     min-height: 60vh;
     width: 70vw;
-    background-color: #457b9d;
+    background-color: $powderBlue;
     margin: auto;
 }

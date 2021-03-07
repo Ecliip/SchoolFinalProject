@@ -5,6 +5,7 @@ use App\Http\Controllers\CarModelController;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UniversalGetAllController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home.page');
+Route::get('/', [UniversalGetAllController::class, 'getTenOfAll'])->name('home.page');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CategoryController::class, 'showAll'])->name('dashboard');

@@ -4,7 +4,23 @@
 
 section {
     width: 100%;
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
+    //border-bottom: 50px solid $powderBlue;
+    background-color: $prussianBlue;
+    color: $honeydew;
+    border-radius: 5px;
+    box-shadow: #2d3748 1rem 1rem 3rem 0px;
+    &:first-of-type {
+        margin-top: 2rem;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 5rem;
+    }
+
+    &:last-of-type {
+        margin-bottom: 2rem;
+    }
 }
 
 .the-wrapper, {
@@ -26,16 +42,22 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 0 5rem;
 
     & .card-25 {
-        flex: 0 1 20vw;
-        background-color: #2d3748;
+        flex: 0 1 auto;
+        background-color: $celadonBlue;
         height: 20rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 2rem;
+        border-radius: 5px;
+        overflow: hidden;
     }
     & .card-25:not(:last-of-type) {
         margin-right: 2rem;
         margin-bottom: 2rem;
     }
-
-
 }

@@ -1,5 +1,8 @@
 /node_modules
 /public/hot
+/public/images/brands
+/public/images/categories
+/public/images/carModels
 /public/storage
 /storage/*.key
 /vendor

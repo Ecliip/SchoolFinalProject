@@ -9,13 +9,26 @@
 .container {
   min-height: 60vh;
   width: 70vw;
-  background-color: #457b9d;
+  background-color: #A8DADC;
   margin: auto;
 }
 
 section {
   width: 100%;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
+  background-color: #1D3557;
+  color: #F1FAEE;
+  border-radius: 5px;
+  box-shadow: #2d3748 1rem 1rem 3rem 0px;
+}
+section:first-of-type {
+  margin-top: 2rem;
+}
+section:not(:last-of-type) {
+  margin-bottom: 5rem;
+}
+section:last-of-type {
+  margin-bottom: 2rem;
 }
 
 .the-wrapper {
@@ -36,11 +49,19 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 0 5rem;
 }
 .the-wrapper-25 .card-25 {
-  flex: 0 1 20vw;
-  background-color: #2d3748;
+  flex: 0 1 auto;
+  background-color: #26546d;
   height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .the-wrapper-25 .card-25:not(:last-of-type) {
   margin-right: 2rem;
@@ -186,6 +207,11 @@ footer .banner {
 h2 {
   text-align: center;
   font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+h3 {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -204,6 +230,7 @@ h2 a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 .image-box-sm img {
   max-width: 100%;

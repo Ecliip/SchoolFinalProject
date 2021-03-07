@@ -1,16 +1,50 @@
 @extends('layouts.classic')
 @section('content')
-<section>
-    <h2>Carrocerias mas populares</h2>
-    <div class="the-wrapper-25">
-        <div class="card-25"></div>
-        <div class="card-25"></div>
-        <div class="card-25"></div>
-        <div class="card-25"></div>
-        <div class="card-25"></div>
-    </div>
-</section>
-
+    @if($categories->count() > 0)
+        <section>
+            <h2>Carrocerias mas populares</h2>
+            <div class="the-wrapper-25">
+                @foreach($categories as $category)
+                    <div class="card-25">
+                        <h3>{{$category->category}}</h3>
+                        <div class="image-box-sm">
+                            <img src="{{$category->photo_sm}}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
+    @if($brands->count() > 0)
+        <section>
+            <h2>Marcas mas populares</h2>
+            <div class="the-wrapper-25">
+                @foreach($brands as $brand)
+                    <div class="card-25">
+                        <h3>{{$brand->brand}}</h3>
+                        <div class="image-box-sm">
+                            <img src="{{$brand->photo_sm}}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
+    @if($models->count() > 0)
+        <section>
+            <h2>Modelos mas populares</h2>
+            <div class="the-wrapper-25">
+                @foreach($models as $model)
+                    <div class="card-25">
+                        <h3>{{$model->model}}</h3>
+                        <div class="image-box-sm">
+                            <img src="{{$model->photo_sm}}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
 @endsection
 
 
