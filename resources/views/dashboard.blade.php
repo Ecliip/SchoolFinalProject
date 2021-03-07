@@ -161,7 +161,7 @@
                 </div>
             @endforeach
             <div class="pagination-wrapper">
-                {{$categories->links()}}
+{{--                {{$categories->links()}}--}}
             </div>
 
         </div>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
             @endforeach
-            {{$brands->links()}}
+{{--            {{$brands->links()}}--}}
         </div>
         @endif
         @if($carModels)
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                 @endforeach
-                {{$carModels->links()}}
+{{--                {{$carModels->links()}}--}}
             </div>
         @endif
     </div>

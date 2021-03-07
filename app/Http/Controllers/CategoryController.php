@@ -13,10 +13,11 @@ use Intervention\Image\Facades\Image;
 class CategoryController extends Controller
 {
 // TODO have to manage exceptions https://laravel.com/docs/8.x/errors#the-exception-handler
+// TODO create admin-pages for Categories/Brands/Model/Cars/
     public function showAll() {
-        $categories = Category::latest()->simplePaginate(2);
-        $brands = Brand::latest()->simplePaginate(2);
-        $carModels = CarModel::latest()->simplePaginate(2);
+        $categories = Category::latest()->get();
+        $brands = Brand::latest()->get();
+        $carModels = CarModel::latest()->get();
         return view('dashboard')->with(compact('categories', 'brands', 'carModels'));
     }
 
