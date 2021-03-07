@@ -44,6 +44,12 @@
     & input:not(:last-of-type) {
         margin-bottom: 1rem;
     }
+
+    & select {
+        width: 40%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }
 
 

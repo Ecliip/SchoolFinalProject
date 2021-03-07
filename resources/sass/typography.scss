@@ -21,3 +21,18 @@ section a {
 h2 a {
     color: $honeydew;
 }
+
+a.add_car_btn {
+    display: block;
+    text-align: center;
+    background-color: $imperialRed;
+    padding: 1rem;
+    color: $honeydew;
+    border-radius: 5px;
+    transition: .3s;
+
+    &:hover {
+        background-color: #a02329;
+        transform: scale(1.05);
+    }
+}

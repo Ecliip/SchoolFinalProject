@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarModelController;
+use App\Http\Controllers\CarsController;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SessionController;
@@ -31,6 +32,10 @@ Route::get('/brand/delete/{id}', [BrandController::class, 'delete'])->name('dele
 
 Route::post('car-model/add', [CarModelController::class, 'add'])->name('add.car-model');
 Route::get('/car-model/delete/{id}', [CarModelController::class, 'delete'])->name('delete.car-model');
+
+Route::get('cars', [CarsController::class, 'index'])->name('all.car');
+Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('submit-form.car');
+Route::post('car/add', [CarsController::class, 'add'])->name('add.car');
 
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');

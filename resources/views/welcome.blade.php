@@ -17,7 +17,7 @@
                     @endforeach
 
                 </div>
-            <a class="open-all" href="#">Ver todas las carrocerias</a>
+            <a class="open-all" href="{{route('all.car')}}">Ver todas las carrocerias</a>
         </section>
     @endif
     @if($brands->count() > 0)
@@ -35,7 +35,7 @@
                     </a>
                 @endforeach
             </div>
-            <a class="open-all" href="#">Ver todas las marcas</a>
+            <a class="open-all" href="all.car">Ver todas las marcas</a>
         </section>
     @endif
     @if($models->count() > 0)
@@ -53,7 +53,7 @@
                     </a>
                 @endforeach
             </div>
-            <a class="open-all" href="#">Ver todas los modelos</a>
+            <a class="open-all" href="all.car">Ver todas los modelos</a>
         </section>
     @endif
 @endsection
