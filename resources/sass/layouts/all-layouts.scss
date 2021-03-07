@@ -2,7 +2,12 @@
 @import "admin";
 @import "classic";
 
-.the-wrapper {
+section {
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+.the-wrapper, {
     display: flex;
     width: 100%;
     padding: 2rem 4rem;
@@ -15,4 +20,22 @@
     & .wrapped-col:not(:last-of-type) {
         margin-right: 2rem;
     }
+}
+
+.the-wrapper-25 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & .card-25 {
+        flex: 0 1 20vw;
+        background-color: #2d3748;
+        height: 20rem;
+    }
+    & .card-25:not(:last-of-type) {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
+
 }

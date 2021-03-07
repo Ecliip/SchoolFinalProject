@@ -1,6 +1,16 @@
 @extends('layouts.classic')
 @section('content')
-   <p>Welcome page</p>
+<section>
+    <h2>Carrocerias mas populares</h2>
+    <div class="the-wrapper-25">
+        <div class="card-25"></div>
+        <div class="card-25"></div>
+        <div class="card-25"></div>
+        <div class="card-25"></div>
+        <div class="card-25"></div>
+    </div>
+</section>
+
 @endsection
 
 
