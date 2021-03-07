@@ -4,7 +4,7 @@
 
 section {
     width: 100%;
-    padding: 3rem 4rem;
+    padding: 5rem 4rem;
     //border-bottom: 50px solid $powderBlue;
     background-color: $prussianBlue;
     color: $honeydew;
@@ -20,6 +20,10 @@ section {
 
     &:last-of-type {
         margin-bottom: 2rem;
+    }
+
+    & .open-all {
+        float: right;
     }
 }
 
@@ -44,6 +48,11 @@ section {
     justify-content: center;
     padding: 0 0 5rem;
 
+    & a:not(:last-of-type) {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
     & .card-25 {
         flex: 0 1 auto;
         background-color: $celadonBlue;
@@ -55,9 +64,16 @@ section {
         padding: 2rem 2rem;
         border-radius: 5px;
         overflow: hidden;
+        transition: .3s;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: #ffd8a1 0 0 3rem 0px;
+
+        }
     }
     & .card-25:not(:last-of-type) {
-        margin-right: 2rem;
-        margin-bottom: 2rem;
+        //margin-right: 2rem;
+        //margin-bottom: 2rem;
     }
 }

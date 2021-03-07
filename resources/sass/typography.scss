@@ -14,6 +14,10 @@ a, :link, :visited {
     text-decoration: none;
 }
 
+section a {
+    color: $honeydew;
+}
+
 h2 a {
     color: $honeydew;
 }

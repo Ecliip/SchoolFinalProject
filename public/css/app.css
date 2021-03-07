@@ -15,7 +15,7 @@
 
 section {
   width: 100%;
-  padding: 3rem 4rem;
+  padding: 5rem 4rem;
   background-color: #1D3557;
   color: #F1FAEE;
   border-radius: 5px;
@@ -29,6 +29,9 @@ section:not(:last-of-type) {
 }
 section:last-of-type {
   margin-bottom: 2rem;
+}
+section .open-all {
+  float: right;
 }
 
 .the-wrapper {
@@ -51,6 +54,10 @@ section:last-of-type {
   justify-content: center;
   padding: 0 0 5rem;
 }
+.the-wrapper-25 a:not(:last-of-type) {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
 .the-wrapper-25 .card-25 {
   flex: 0 1 auto;
   background-color: #26546d;
@@ -62,12 +69,12 @@ section:last-of-type {
   padding: 2rem 2rem;
   border-radius: 5px;
   overflow: hidden;
+  transition: 0.3s;
 }
-.the-wrapper-25 .card-25:not(:last-of-type) {
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+.the-wrapper-25 .card-25:hover {
+  transform: scale(1.05);
+  box-shadow: #ffd8a1 0 0 3rem 0px;
 }
-
 header {
   border-bottom: 1px solid #2d3748;
   color: #F1FAEE;
@@ -217,6 +224,10 @@ h3 {
 
 a, :link, :visited {
   text-decoration: none;
+}
+
+section a {
+  color: #F1FAEE;
 }
 
 h2 a {
