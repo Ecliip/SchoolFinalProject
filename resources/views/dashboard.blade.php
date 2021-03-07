@@ -160,8 +160,12 @@
                     </div>
                 </div>
             @endforeach
-            {{$categories->links()}}
+            <div class="pagination-wrapper">
+                {{$categories->links()}}
+            </div>
+
         </div>
+
 
         @if($brands)
         <div class="wrapped-col">
@@ -180,8 +184,7 @@
             @endforeach
             {{$brands->links()}}
         </div>
-            @endif
-
+        @endif
         @if($carModels)
             <div class="wrapped-col">
                 <h2>Modelos</h2>
@@ -197,7 +200,6 @@
                             <a href="#">Edit</a>
                             <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>
                         </div>
-
                     </div>
                 @endforeach
                 {{$carModels->links()}}

@@ -14,9 +14,9 @@ class CategoryController extends Controller
 {
 // TODO have to manage exceptions https://laravel.com/docs/8.x/errors#the-exception-handler
     public function showAll() {
-        $categories = Category::latest()->paginate(2);
-        $brands = Brand::latest()->paginate(2);
-        $carModels = CarModel::latest()->paginate(2);
+        $categories = Category::latest()->simplePaginate(2);
+        $brands = Brand::latest()->simplePaginate(2);
+        $carModels = CarModel::latest()->simplePaginate(2);
         return view('dashboard')->with(compact('categories', 'brands', 'carModels'));
     }
 
