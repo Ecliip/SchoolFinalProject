@@ -10,4 +10,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="xy-centered">
+@php
+    $year = date('Y');
+@endphp
 

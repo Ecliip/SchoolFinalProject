@@ -45,10 +45,14 @@
         margin-bottom: 1rem;
     }
 
-    & select {
+    & select, & .radio-box {
         width: 40%;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 

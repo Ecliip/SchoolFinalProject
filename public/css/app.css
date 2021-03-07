@@ -204,10 +204,14 @@ footer .banner {
 .form input:not(:last-of-type) {
   margin-bottom: 1rem;
 }
-.form select {
+.form select, .form .radio-box {
   width: 40%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .xy-centered {

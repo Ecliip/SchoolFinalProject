@@ -1,6 +1,9 @@
 @extends('layouts.xy-centered')
 @section('content')
-<div class="form-container">
+    @php
+        $year = date('Y');
+    @endphp
+    <div class="form-container">
     <h2>Añadir un coche <a href="{{route('home.page')}}">supercars.web</a></h2>
     <div class="icon-box">
         <img src="{{asset('images/design/clock.png')}}">
@@ -23,7 +26,21 @@
             <option value="Automático">Automático</option>
             <option value="Manual">Manual</option>
         </select>
-        <button class="btn" type="submit">Entrar</button>
+        <input type="number" name="year" placeholder="año" min="1900" max="{{$year}}" required >
+        <div class="radio-box">
+            <h4>Es nuevo o usado</h4>
+            <div>
+                <label for="isNewTrue">nuevo</label>
+                <input type="radio" name="isNew" value=1 id="isNewTrue">
+            </div>
+            <div>
+                <label for="isNewFalse">usado</label>
+                <input type="radio" name="isNew" value=0 id="isNewFalse">
+            </div>
+        </div>
+{{--        TODO have to add list for available categories, brands and models--}}
+        <input type="hidden" name="isSold" value=0>
+        <button class="btn" type="submit">Subir</button>
     </form>
 </div>
 @endsection
