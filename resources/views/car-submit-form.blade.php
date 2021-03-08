@@ -93,15 +93,12 @@
                     } else {
                         let htmlOptions = "";
                         for (let i = 0; i < data.length; i++) {
-                            htmlOptions = `<option value=${data[i].id}>${data[i].model}</option>`
+                            htmlOptions += `<option value=${data[i].id}>${data[i].model}</option>`
+                            console.log(data[i]);
+                            console.log(htmlOptions);
                         }
-
-
-
                         $('#selectModel').attr('disabled', false); // works fine
-                        $('#selectModel').html(
-                            htmlOptions
-                        )
+                        $('#selectModel').html(htmlOptions);
                     }
                 })
             } else {
