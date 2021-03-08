@@ -64,9 +64,9 @@
             <h4>Modelo de coche</h4>
             <select id="selectModel" disabled="true" name="brand_id">
                 <option value="-1">Elige un modelo</option>
-                @foreach($models as $model)
-                    <option value={{$model->id}}>{{$model->model}}</option>
-                @endforeach
+{{--                @foreach($models as $model)--}}
+{{--                    <option value={{$model->id}}>{{$model->model}}</option>--}}
+{{--                @endforeach--}}
             </select>
         </div>
 
@@ -77,11 +77,36 @@
 {{--    SCRITPS --}}
 
     <script>
-        function showCurrent(event) {
-            if (event > 0) {
-                $('#selectModel').attr('disabled', false); // works fine
+        function showCurrent(brandId) {
+
+            if (brandId > 0) {
+
+                console.log(brandId);
+                $.get(`getModelsByBrandId/${brandId}`, (data, status) => {
+                    console.log(data);
+                    console.log(status);
+
+                    if ($.isEmptyObject(data)) {
+                        $('#selectModel').attr('disabled', true); // works fine
+                        $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
+
+                    } else {
+                        let htmlOptions = "";
+                        for (let i = 0; i < data.length; i++) {
+                            htmlOptions = `<option value=${data[i].id}>${data[i].model}</option>`
+                        }
+
+
+
+                        $('#selectModel').attr('disabled', false); // works fine
+                        $('#selectModel').html(
+                            htmlOptions
+                        )
+                    }
+                })
             } else {
                 $('#selectModel').attr('disabled', true); // works fine
+                $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
             }
         }
     </script>
