@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Car;
+use App\Models\CarModel;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CarsController extends Controller
@@ -13,7 +16,11 @@ class CarsController extends Controller
     }
 
     public function showAddForm() {
-        return view('car-submit-form');
+        $categories = Category::all();
+        $brands = Brand::all();
+        $models = CarModel::all();
+
+        return view('car-submit-form')->with(compact('categories', 'brands', 'models'));
     }
 
     public function add() {
