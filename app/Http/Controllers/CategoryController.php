@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
     public function add(Request $request) {
         $request->validate([
-            'category'=>'required|min:5',
+            'cat_name'=>'required|min:5',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required'
@@ -49,7 +49,7 @@ class CategoryController extends Controller
         })->save($imgPathSm.$imgNameSm);
 
         Category::insert([
-            'category' => $request->category,
+            'cat_name' => $request->cat_name,
             'description' => $request->description,
             'photo_sm' => $imgSmPathAndName,
             'photo_md' => $imgMdPathAndName,

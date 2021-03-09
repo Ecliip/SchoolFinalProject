@@ -12,8 +12,8 @@
                 @csrf
                 <div class="mb-3">
                     <label for="categoryField" class="form-label">Categoria</label>
-                    <input type="text" name="category" class="form-control" id="categoryField">
-                    @error('category')
+                    <input type="text" name="cat_name" class="form-control" id="categoryField">
+                    @error('cat_name')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -42,8 +42,8 @@
             <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="categoryField" class="form-label">Marca</label>
-                    <input type="text" name="brand_name" class="form-control" id="categoryField">
+                    <label for="brandField" class="form-label">Marca</label>
+                    <input type="text" name="brand_name" class="form-control" id="brandField">
                     @error('brand_name')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -91,7 +91,7 @@
                     <select class="form-select" name="theCategory" id="selectCategory" aria-label="Elegir una categoria">
                         <option selected value=-1>Elige tipo de coche</option>
                         @foreach($categories as $category)
-                        <option value={{$category->id}}>{{$category->category}}</option>
+                        <option value={{$category->id}}>{{$category->cat_name}}</option>
                         @endforeach
                         @error('theCategory')
                             <span class="text-danger">{{$message}}</span>
@@ -150,7 +150,7 @@
             <h2>Categorias</h2>
             @foreach($categories as $category)
                 <div class="category__item">
-                    <h3 class="category__name">{{$category->category}}</h3>
+                    <h3 class="category__name">{{$category->cat_name}}</h3>
                     <div class="image-box-sm">
                         <img src="{{asset($category->photo_sm)}}">
                     </div>
@@ -194,7 +194,7 @@
                         <div class="image-box-sm">
                             <img src="{{asset($carModel->photo_sm)}}">
                         </div>
-                        <div>Categoria: {{$carModel->category->category}}</div>
+                        <div>Categoria: {{$carModel->category->cat_name}}</div>
                         <div>Marca: {{$carModel->brand->brand_name}}</div>
                         <div class="buttons-group">
                             <a href="#">Edit</a>
