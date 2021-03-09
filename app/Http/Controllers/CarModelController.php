@@ -15,7 +15,7 @@ class CarModelController extends Controller
 
     public function add(Request $request) {
         $request->validate([
-            'model'=>'required|min:5',
+            'model_name'=>'required|min:5',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required',
@@ -43,7 +43,7 @@ class CarModelController extends Controller
         })->save($imgPathSm.$imgNameSm);
 
         CarModel::insert([
-            'model' => $request->model,
+            'model_name' => $request->model_name,
             'brand_id' => $request->theBrand,
             'category_id' => $request->theCategory,
             'description' => $request->description,

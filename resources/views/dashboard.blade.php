@@ -74,9 +74,9 @@
                 @csrf
                 <div class="mb-3">
                     <label for="modelName" class="form-label">Model</label>
-                    <input type="text" name="model" class="form-control" id="modelName">
-                    @error('model')
-                    <span class="text-danger">{{$message}}</span>
+                    <input type="text" name="model_name" class="form-control" id="modelName">
+                    @error('model_name')
+                        <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -190,7 +190,7 @@
                 <h2>Modelos</h2>
                 @foreach($carModels as $carModel)
                     <div class="category__item">
-                        <h3 class="category__name">{{$carModel->carModel}}</h3>
+                        <h3 class="category__name">{{$carModel->model_name}}</h3>
                         <div class="image-box-sm">
                             <img src="{{asset($carModel->photo_sm)}}">
                         </div>
