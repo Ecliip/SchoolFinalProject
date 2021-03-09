@@ -73,7 +73,7 @@
             <select name="category_id">
                 <option value="-1">Elige carroceria</option>
                 @foreach($categories as $category)
-                    <option value={{$category->id}}>{{$category->category}}</option>
+                    <option value={{$category->id}}>{{$category->cat_name}}</option>
                 @endforeach
             </select>
             @error('category_id')
@@ -85,7 +85,7 @@
             <select onchange="showCurrent(this.value)" name="brand_id">
                 <option value=-1>Elige marca</option>
                 @foreach($brands as $brand)
-                    <option  value={{$brand->id}}>{{$brand->brand}}</option>
+                    <option  value={{$brand->id}}>{{$brand->brand_name}}</option>
                 @endforeach
             </select>
             @error('brand_id')
@@ -140,7 +140,7 @@
                     } else {
                         let htmlOptions = "";
                         for (let i = 0; i < data.length; i++) {
-                            htmlOptions += `<option value=${data[i].id}>${data[i].model}</option>`
+                            htmlOptions += `<option value=${data[i].id}>${data[i].model_name}</option>`
                             console.log(data[i]);
                             console.log(htmlOptions);
                         }
