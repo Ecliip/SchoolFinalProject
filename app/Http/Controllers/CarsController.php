@@ -53,8 +53,23 @@ class CarsController extends Controller
             'category_id.required'=> 'Tiene que elegir un tipo de carrocería',
             'brand_id.required'=> 'Tiene que elegir su marca',
             'car_model_id.required'=> 'Tiene que elegir un modelo',
-        ]
-        );
+        ]);
+
+        Car::insert([
+            'price' =>  $request->price,
+            'engine'=> $request->engine,
+            'power_hp'=> $request->power_hp,
+            'kilometers'=> $request->kilometers,
+            'doors'=> $request->doors,
+            'transmission'=> $request->transmission,
+            'traccion'=> $request->traccion,
+            'year'=> $request->year,
+            'isNew'=> $request->isNew,
+            'isSold'=> $request->isSold,
+            'category_id'=> $request->category_id,
+            'brand_id'=> $request->brand_id,
+            'car_model_id'=> $request->car_model_id,
+        ]);
 
         return redirect()->route('all.car')->with('success', 'car added');
     }
