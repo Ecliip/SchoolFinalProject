@@ -212,6 +212,9 @@ footer .banner {
   margin-bottom: 1rem;
   background-color: white;
 }
+.form label {
+  margin-bottom: 1rem;
+}
 
 .xy-centered {
   justify-content: center;

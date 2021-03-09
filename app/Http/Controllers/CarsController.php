@@ -6,8 +6,11 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\CarModel;
 use App\Models\Category;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CarsController extends Controller
 {
@@ -38,6 +41,7 @@ class CarsController extends Controller
             'category_id'=> 'required',
             'brand_id'=> 'required',
             'car_model_id'=> 'required',
+            'image' => 'required',
         ],
         [
             'price.required' => 'Tiene que introducir un precio',
@@ -53,7 +57,28 @@ class CarsController extends Controller
             'category_id.required'=> 'Tiene que elegir un tipo de carrocería',
             'brand_id.required'=> 'Tiene que elegir su marca',
             'car_model_id.required'=> 'Tiene que elegir un modelo',
+            'image.required'=> 'Tiene que elegir una imagen',
         ]);
+
+        $image = $request->file('image');
+        $generatedName = hexdec(uniqid());
+        $imgExtension = strtolower($image->getClientOriginalExtension());
+        $imgName = $generatedName.'.'.$imgExtension;
+        $imgPathMd = 'images/cars/md/';
+        $imgMdPathAndName = $imgPathMd.$imgName;
+        Image::make($image)->resize(600, null, function ($constraint){
+            $constraint->aspectRatio();
+        })->save($imgPathMd.$imgName);
+
+        $generatedNameSm = hexdec(uniqid());
+        $imgExtensionSm = strtolower($image->getClientOriginalExtension());
+        $imgNameSm = $generatedNameSm.'.'.$imgExtensionSm;
+        $imgPathSm = 'images/cars/sm/';
+        $imgSmPathAndName = $imgPathSm.$imgNameSm;
+        Image::make($image)->resize(300, null, function ($constraint){
+            $constraint->aspectRatio();
+        })->save($imgPathSm.$imgNameSm);
+
 
         Car::insert([
             'price' =>  $request->price,
@@ -66,9 +91,14 @@ class CarsController extends Controller
             'year'=> $request->year,
             'isNew'=> $request->isNew,
             'isSold'=> $request->isSold,
+            'photo_md'=> $imgMdPathAndName,
+            'photo_sm'=> $imgSmPathAndName,
+            'isSold'=> $request->isSold,
             'category_id'=> $request->category_id,
             'brand_id'=> $request->brand_id,
             'car_model_id'=> $request->car_model_id,
+            'user_id' => Auth::user()->id,
+            'created_at' => Carbon::now(),
         ]);
 
         return redirect()->route('all.car')->with('success', 'car added');

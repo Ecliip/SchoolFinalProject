@@ -19,7 +19,7 @@
             <option value="Eléctrico">Eléctrico</option>
             <option value="Mix">Eléctrico</option>
         </select>
-        <input type="number" name="power" min="1" max="1300" placeholder="potencia en cv" required >
+        <input type="number" name="power_hp" min="1" max="1300" placeholder="potencia en cv" required >
         <input type="number" name="kilometers" placeholder="KM" min="0" max="300000" required >
         <input type="number" name="doors" placeholder="puertas" min="1" max="10" required >
         <select name="transmission">
@@ -27,18 +27,15 @@
             <option value="Automático">Automático</option>
             <option value="Manual">Manual</option>
         </select>
+        <select name="traccion">
+            <option value="unknown">Tipo de tracción</option>
+            <option value="Fwd">Delantera</option>
+            <option value="Rwd">Rwd</option>
+            <option value="Awd">Awd</option>
+            <option value="x_4wd">x_4wd</option>
+            <option value="x_4x4">4x4</option>
+        </select>
         <input type="number" name="year" placeholder="año" min="1900" max="{{$year}}" required >
-        <div class="radio-box">
-            <h4>Es nuevo o usado</h4>
-            <div>
-                <label for="isNewTrue">nuevo</label>
-                <input type="radio" name="isNew" value=1 id="isNewTrue">
-            </div>
-            <div>
-                <label for="isNewFalse">usado</label>
-                <input type="radio" name="isNew" value=0 id="isNewFalse">
-            </div>
-        </div>
         <input type="hidden" name="isSold" value=0>
         <div class="select-box">
             <h4>Tipo de carroceria</h4>
@@ -60,11 +57,25 @@
         </div>
         <div class="select-box">
             <h4>Modelo de coche</h4>
-            <select id="selectModel" disabled="true" name="brand_id">
+            <select id="selectModel" disabled="true" name="car_model_id">
                 <option value="-1">Elige un modelo</option>
             </select>
         </div>
-
+        <div class="radio-box">
+            <h4>Es nuevo o usado</h4>
+            <div>
+                <label for="isNewTrue">nuevo</label>
+                <input type="radio" name="isNew" value=1 id="isNewTrue">
+            </div>
+            <div>
+                <label for="isNewFalse">usado</label>
+                <input type="radio" name="isNew" value=0 id="isNewFalse">
+            </div>
+        </div>
+        <div class="select-box">
+            <label for="imageInput">Elegir una foto</label>
+            <input type="file" name="image" id="imageInput">
+        </div>
         <button class="btn" type="submit">Subir</button>
     </form>
 </div>
