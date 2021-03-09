@@ -39,7 +39,6 @@
                 <input type="radio" name="isNew" value=0 id="isNewFalse">
             </div>
         </div>
-{{--        TODO have to add list for available categories, brands and models--}}
         <input type="hidden" name="isSold" value=0>
         <div class="select-box">
             <h4>Tipo de carroceria</h4>
@@ -59,28 +58,20 @@
                 @endforeach
             </select>
         </div>
-
         <div class="select-box">
             <h4>Modelo de coche</h4>
             <select id="selectModel" disabled="true" name="brand_id">
                 <option value="-1">Elige un modelo</option>
-{{--                @foreach($models as $model)--}}
-{{--                    <option value={{$model->id}}>{{$model->model}}</option>--}}
-{{--                @endforeach--}}
             </select>
         </div>
 
         <button class="btn" type="submit">Subir</button>
     </form>
 </div>
-
 {{--    SCRITPS --}}
-
     <script>
         function showCurrent(brandId) {
-
             if (brandId > 0) {
-
                 console.log(brandId);
                 $.get(`getModelsByBrandId/${brandId}`, (data, status) => {
                     console.log(data);
@@ -89,7 +80,6 @@
                     if ($.isEmptyObject(data)) {
                         $('#selectModel').attr('disabled', true); // works fine
                         $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
-
                     } else {
                         let htmlOptions = "";
                         for (let i = 0; i < data.length; i++) {
@@ -107,5 +97,4 @@
             }
         }
     </script>
-
 @endsection
