@@ -88,12 +88,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="selectCategory" class="form-label">Elige tipo de coche</label>
-                    <select class="form-select" name="theCategory" id="selectCategory" aria-label="Elegir una categoria">
+                    <select class="form-select" name="category_id" id="selectCategory" aria-label="Elegir una categoria">
                         <option selected value=-1>Elige tipo de coche</option>
                         @foreach($categories as $category)
                         <option value={{$category->id}}>{{$category->cat_name}}</option>
                         @endforeach
-                        @error('theCategory')
+                        @error('category_id')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </select>

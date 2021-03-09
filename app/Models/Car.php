@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class Car extends Model
 {
     use HasFactory;
-    protected $guarded = [
-        'photo_sm',
-        'photo_md',
-        'user_id',
-        'created_at',
-    ];
 
     public function user()
     {

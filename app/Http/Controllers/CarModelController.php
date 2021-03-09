@@ -14,13 +14,13 @@ class CarModelController extends Controller
     }
 
     public function add(Request $request) {
-        $request->validate([
-            'model_name'=>'required|min:5',
-            'description'=>'required|min:10|max:2000',
+        $validRequest = $request->validate([
+            'model_name'=>'required',
+            'description'=>'required',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required',
-            'theCategory' => 'required|min:0',
-            'theBrand' => 'required|min:0',
+            'category_id' => 'required',
+            'theBrand' => 'required',
         ]);
 
         $image = $request->file('photo');
@@ -45,13 +45,13 @@ class CarModelController extends Controller
         CarModel::insert([
             'model_name' => $request->model_name,
             'brand_id' => $request->theBrand,
-            'category_id' => $request->theCategory,
+            'category_id' => $request->category_id,
             'description' => $request->description,
             'photo_sm' => $imgSmPathAndName,
             'photo_md' => $imgMdPathAndName,
             'created_at' =>Carbon::now()
         ]);
-
+//        CarModel::create($validRequest);
         return redirect()->back()->with('success', 'Model was added successfully');
     }
 

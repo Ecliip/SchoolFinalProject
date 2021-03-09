@@ -139,6 +139,7 @@
                         $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
                     } else {
                         let htmlOptions = "";
+                        htmlOptions += `<option value=-1>Elige un modelo</option>`
                         for (let i = 0; i < data.length; i++) {
                             htmlOptions += `<option value=${data[i].id}>${data[i].model_name}</option>`
                             console.log(data[i]);

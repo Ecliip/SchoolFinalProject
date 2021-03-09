@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class CarModel extends Model
 {
     use HasFactory;
+//    protected $guarded = [
+//        'photo_md',
+//        'photo_sm',
+//        'created_at'
+//    ];
 
     public function brand() {
         return $this->belongsTo(Brand::class);
