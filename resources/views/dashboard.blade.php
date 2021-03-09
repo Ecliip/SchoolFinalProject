@@ -43,9 +43,9 @@
                 @csrf
                 <div class="mb-3">
                     <label for="categoryField" class="form-label">Marca</label>
-                    <input type="text" name="brand" class="form-control" id="categoryField">
-                    @error('brand')
-                    <span class="text-danger">{{$message}}</span>
+                    <input type="text" name="brand_name" class="form-control" id="categoryField">
+                    @error('brand_name')
+                        <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -99,11 +99,11 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="selectModel" class="form-label">Elige marca</label>
-                    <select class="form-select" name="theBrand" id="selectModel" aria-label="Elegir una marca">
+                    <label for="selectBrand" class="form-label">Elige marca</label>
+                    <select class="form-select" name="theBrand" id="selectBrand" aria-label="Elegir una marca">
                         <option selected value=-1>Elige marca deseada</option>
                         @foreach($brands as $brand)
-                            <option value={{$brand->id}}>{{$brand->brand}}</option>
+                            <option value={{$brand->id}}>{{$brand->brand_name}}</option>
                         @endforeach
                         @error('theBrand')
                             <span class="text-danger">{{$message}}</span>
@@ -172,7 +172,7 @@
             <h2>Marcas</h2>
             @foreach($brands as $brand)
                 <div class="category__item">
-                    <h3 class="category__name">{{$brand->brand}}</h3>
+                    <h3 class="category__name">{{$brand->brand_name}}</h3>
                     <div class="image-box-sm">
                         <img src="{{asset($brand->photo_sm)}}">
                     </div>
@@ -195,7 +195,7 @@
                             <img src="{{asset($carModel->photo_sm)}}">
                         </div>
                         <div>Categoria: {{$carModel->category->category}}</div>
-                        <div>Marca: {{$carModel->brand->brand}}</div>
+                        <div>Marca: {{$carModel->brand->brand_name}}</div>
                         <div class="buttons-group">
                             <a href="#">Edit</a>
                             <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>

@@ -13,7 +13,7 @@
         @csrf
         <input type="number" name="price" placeholder="precio" min="200" max="1000000" required >
         @error('price')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
         <select name="engine">
             <option value="unknown">Tipo de combustible</option>
@@ -23,31 +23,31 @@
             <option value="Mix">Eléctrico</option>
         </select>
         @error('engine')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <input type="number" name="power_hp" min="1" max="1300" placeholder="potencia en cv" required >
         @error('power_hp')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <input type="number" name="kilometers" placeholder="KM" min="0" max="300000" required >
         @error('kilometers')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <input type="number" name="doors" placeholder="puertas" min="1" max="10" required >
         @error('doors')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <select name="transmission">
             <option value="unknown">Tipo de transmisión</option>
-            <option value="Automático">Automático</option>
+            <option value="Automático">Automática</option>
             <option value="Manual">Manual</option>
         </select>
         @error('transmission')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <select name="traccion">
@@ -59,11 +59,11 @@
             <option value="x_4x4">4x4</option>
         </select>
         @error('traccion')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
         <input type="number" name="year" placeholder="año" min="1900" max="{{$year}}" required >
         @error('year')
-            <span class="text-error">{{message}}</span>
+            <span class="text-error">{{$message}}</span>
         @enderror
 
         <input type="hidden" name="isSold" value=0>
@@ -77,7 +77,7 @@
                 @endforeach
             </select>
             @error('category_id')
-                <span class="text-error">{{message}}</span>
+                <span class="text-error">{{$message}}</span>
             @enderror
         </div>
         <div class="select-box">
@@ -89,7 +89,7 @@
                 @endforeach
             </select>
             @error('brand_id')
-                <span class="text-error">{{message}}</span>
+                <span class="text-error">{{$message}}</span>
             @enderror
         </div>
         <div class="select-box">
@@ -98,7 +98,7 @@
                 <option value="-1">Elige un modelo</option>
             </select>
             @error('car_model_id')
-                <span class="text-error">{{message}}</span>
+                <span class="text-error">{{$message}}</span>
             @enderror
         </div>
         <div class="radio-box">
@@ -112,14 +112,14 @@
                 <input type="radio" name="isNew" value=0 id="isNewFalse">
             </div>
             @error('isNew')
-                <span class="text-error">{{message}}</span>
+                <span class="text-error">{{$message}}</span>
             @enderror
         </div>
         <div class="select-box">
             <label for="imageInput">Elegir una foto</label>
             <input type="file" name="image" id="imageInput">
             @error('image')
-                <span class="text-error">{{message}}</span>
+                <span class="text-error">{{$message}}</span>
             @enderror
         </div>
         <button class="btn" type="submit">Subir</button>

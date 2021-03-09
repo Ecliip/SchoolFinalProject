@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateModelToUniqueInCarModel extends Migration
+class RenameColModelToModelNameInCarModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class UpdateModelToUniqueInCarModel extends Migration
     public function up()
     {
         Schema::table('car_models', function (Blueprint $table) {
-            Schema::table('car_models', function (Blueprint $table) {
-                $table->string('model')->unique()->change();
-            });
+            $table->renameColumn('model', 'model_name');
         });
     }
 
@@ -28,7 +26,7 @@ class UpdateModelToUniqueInCarModel extends Migration
     public function down()
     {
         Schema::table('car_models', function (Blueprint $table) {
-            $table->dropColumn('model');
+            $table->dropColumn('model_name');
         });
     }
 }

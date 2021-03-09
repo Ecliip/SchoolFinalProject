@@ -2,12 +2,20 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Car extends Model
 {
     use HasFactory;
+    protected $guarded = [
+        'photo_sm',
+        'photo_md',
+        'user_id',
+        'created_at',
+    ];
 
     public function user()
     {

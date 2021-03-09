@@ -17,7 +17,7 @@ class BrandController extends Controller
 
     public function add(Request $request) {
         $request->validate([
-            'brand'=>'required|min:5',
+            'brand_name'=>'required|min:5',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required'
@@ -43,7 +43,7 @@ class BrandController extends Controller
         })->save($imgPathSm.$imgNameSm);
 
         Brand::insert([
-            'brand' => $request->brand,
+            'brand_name' => $request->brand_name,
             'description' => $request->description,
             'photo_sm' => $imgSmPathAndName,
             'photo_md' => $imgMdPathAndName,

@@ -10,6 +10,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class CarsController extends Controller
@@ -27,8 +28,8 @@ class CarsController extends Controller
     }
 
     public function add(Request $request) {
-        $request->validate([
-            'price' => 'required|min:200|max:1000000',
+        $myRequest =$request->validate([
+            'price' => 'required',
             'engine'=> 'required',
             'power_hp'=> 'required',
             'kilometers'=> 'required',
@@ -81,25 +82,31 @@ class CarsController extends Controller
 
 
         Car::insert([
-            'price' =>  $request->price,
-            'engine'=> $request->engine,
-            'power_hp'=> $request->power_hp,
-            'kilometers'=> $request->kilometers,
-            'doors'=> $request->doors,
-            'transmission'=> $request->transmission,
-            'traccion'=> $request->traccion,
-            'year'=> $request->year,
-            'isNew'=> $request->isNew,
-            'isSold'=> $request->isSold,
-            'photo_md'=> $imgMdPathAndName,
-            'photo_sm'=> $imgSmPathAndName,
-            'isSold'=> $request->isSold,
-            'category_id'=> $request->category_id,
-            'brand_id'=> $request->brand_id,
-            'car_model_id'=> $request->car_model_id,
             'user_id' => Auth::user()->id,
             'created_at' => Carbon::now(),
+            'photo_md'=> $imgMdPathAndName,
+            'photo_sm'=> $imgSmPathAndName,
         ]);
+        Car::create($myRequest);
+
+
+
+//             'price' =>  $request->price,
+//            'engine'=> $request->engine,
+//            'power_hp'=> $request->power_hp,
+//            'kilometers'=> $request->kilometers,
+//            'doors'=> $request->doors,
+//            'transmission'=> $request->transmission,
+//            'traccion'=> $request->traccion,
+//            'year'=> $request->year,
+//            'isNew'=> $request->isNew,
+//            'isSold'=> $request->isSold,
+
+//            'isSold'=> $request->isSold,
+//            'category_id'=> $request->category_id,
+//            'brand_id'=> $request->brand_id,
+//            'car_model_id'=> $request->car_model_id,
+
 
         return redirect()->route('all.car')->with('success', 'car added');
     }

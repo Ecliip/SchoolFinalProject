@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateCategoryToUniqueInCategories extends Migration
+class AddBrandNameColToBrandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateCategoryToUniqueInCategories extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->string('category')->unique()->change();
+        Schema::table('brands', function (Blueprint $table) {
+            $table->string('brand_name');
         });
     }
 
@@ -25,8 +25,8 @@ class UpdateCategoryToUniqueInCategories extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('category');
+        Schema::table('brands', function (Blueprint $table) {
+            $table->dropColumn('brand_name');
         });
     }
 }
