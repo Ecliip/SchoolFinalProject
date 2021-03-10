@@ -75,6 +75,57 @@ section .open-all {
   transform: scale(1.05);
   box-shadow: #ffd8a1 0 0 3rem 0px;
 }
+.car:first-of-type {
+  margin-top: 2rem;
+}
+
+.car {
+  display: flex;
+  padding: 2rem 3rem;
+  background-color: #F1FAEE;
+  border-radius: 5px;
+  min-height: 22rem;
+  flex-wrap: wrap;
+}
+.car .image-box-sm {
+  margin-right: 2rem;
+}
+.car .car__body {
+  flex: 1;
+}
+.car .car__body a {
+  float: right;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+.car .car__body ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.car .car__body ul div {
+  flex: 1 1 23rem;
+}
+.car .car__body ul li {
+  display: flex;
+  margin: auto;
+}
+.car .car__body ul li .car__mini-title {
+  flex: 1;
+  text-align: right;
+  margin-right: 1rem;
+  width: 50%;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.car .car__body ul li .car__data {
+  width: 50%;
+  white-space: nowrap;
+  text-align: left;
+}
+
 header {
   border-bottom: 1px solid #2d3748;
   color: #F1FAEE;
@@ -266,6 +317,7 @@ a.add_car_btn:hover {
 
 .image-box-sm {
   width: 20rem;
+  flex: 0 0 20rem;
   height: 20rem;
   overflow: hidden;
   display: flex;
