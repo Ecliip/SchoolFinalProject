@@ -2,14 +2,14 @@
 
 .image-box-sm {
     width: 20rem;
-    flex: 0 0 20rem;
-    height: 20rem;
+    //height: 20rem;
+    flex: 0 1 20rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-
+    margin-right: 2rem;
      & img {
         max-width: 100%;
      }
@@ -17,14 +17,14 @@
 
 .image-box-md {
     width: 40rem;
-    flex: 0 0 40rem;
-    height: 40rem;
+    //height: 40rem;
+    flex: 0 1 40rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    margin-right: 4rem;
+    margin: 2rem 4rem;
 
     & img {
         max-width: 100%;
