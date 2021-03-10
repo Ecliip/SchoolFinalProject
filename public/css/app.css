@@ -79,6 +79,10 @@ section .open-all {
   margin-top: 2rem;
 }
 
+.car:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
 .car {
   display: flex;
   padding: 2rem 3rem;
@@ -86,6 +90,7 @@ section .open-all {
   border-radius: 5px;
   min-height: 22rem;
   flex-wrap: wrap;
+  box-shadow: #2d3748 0 0 2rem;
 }
 .car .image-box-sm {
   margin-right: 2rem;

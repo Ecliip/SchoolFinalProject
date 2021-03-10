@@ -75,7 +75,6 @@ section {
         &:hover {
             transform: scale(1.05);
             box-shadow: #ffd8a1 0 0 3rem 0px;
-
         }
     }
     & .card-25:not(:last-of-type) {
@@ -91,6 +90,10 @@ section {
     margin-top: 2rem;
 }
 
+.car:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
 .car {
     display: flex;
     padding: 2rem 3rem;
@@ -98,6 +101,7 @@ section {
     border-radius: 5px;
     min-height: 22rem;
     flex-wrap: wrap;
+    box-shadow: #2d3748 0 0 2rem;
 
     & .image-box-sm {
         margin-right: 2rem;
