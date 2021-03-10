@@ -48,7 +48,7 @@
                     </li>
                 </div>
             </ul>
-            <a href="#">Leer más</a>
+            <a href="{{route('info.car', $car->id)}}">Ver...</a>
         </div>
     </div>
     @endforeach

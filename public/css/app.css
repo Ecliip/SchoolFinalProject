@@ -340,6 +340,21 @@ a.add_car_btn:hover {
   max-width: 100%;
 }
 
+.image-box-md {
+  width: 40rem;
+  flex: 0 0 40rem;
+  height: 40rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 4rem;
+}
+.image-box-md img {
+  max-width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -14,3 +14,19 @@
         max-width: 100%;
      }
 }
+
+.image-box-md {
+    width: 40rem;
+    flex: 0 0 40rem;
+    height: 40rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 4rem;
+
+    & img {
+        max-width: 100%;
+    }
+}

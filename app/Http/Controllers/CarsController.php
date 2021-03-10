@@ -18,6 +18,11 @@ class CarsController extends Controller
         return view('cars')->with(compact('cars'));
     }
 
+    public function showCar($id) {
+        $car = Car::find($id);
+        return view('car')->with(compact('car'));
+    }
+
     public function showAddForm() {
         $categories = Category::all();
         $brands = Brand::all();
