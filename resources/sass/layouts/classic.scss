@@ -90,9 +90,15 @@ section {
     margin-top: 2rem;
 }
 
+.car:last-of-type {
+    margin-bottom: 2rem;
+}
+
 .car:not(:last-of-type) {
     margin-bottom: 1rem;
 }
+
+
 
 .car {
     display: flex;
@@ -102,7 +108,8 @@ section {
     min-height: 22rem;
     flex-wrap: wrap;
     box-shadow: #2d3748 0 0 2rem;
-
+    justify-content: center;
+    align-items: center;
     & .image-box-sm {
         margin-right: 2rem;
     }

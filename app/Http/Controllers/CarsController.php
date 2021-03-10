@@ -6,9 +6,7 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\CarModel;
 use App\Models\Category;
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -16,7 +14,7 @@ use Intervention\Image\Facades\Image;
 class CarsController extends Controller
 {
     public function index() {
-        $cars = Car::latest()->simplePaginate(10);
+        $cars = Car::latest()->simplePaginate(3);
         return view('cars')->with(compact('cars'));
     }
 

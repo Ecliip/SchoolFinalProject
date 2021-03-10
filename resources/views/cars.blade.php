@@ -52,4 +52,7 @@
         </div>
     </div>
     @endforeach
+    <div class="pagination" style="margin: 2rem; ">
+        {{$cars->links()}}
+    </div>
 @endsection

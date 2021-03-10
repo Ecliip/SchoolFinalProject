@@ -79,6 +79,10 @@ section .open-all {
   margin-top: 2rem;
 }
 
+.car:last-of-type {
+  margin-bottom: 2rem;
+}
+
 .car:not(:last-of-type) {
   margin-bottom: 1rem;
 }
@@ -91,6 +95,8 @@ section .open-all {
   min-height: 22rem;
   flex-wrap: wrap;
   box-shadow: #2d3748 0 0 2rem;
+  justify-content: center;
+  align-items: center;
 }
 .car .image-box-sm {
   margin-right: 2rem;
