@@ -101,6 +101,14 @@ section .open-all {
 .car .image-box-sm {
   margin-right: 2rem;
 }
+.car__cols {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .car .car__body {
   flex: 1;
 }
@@ -135,6 +143,18 @@ section .open-all {
   width: 50%;
   white-space: nowrap;
   text-align: left;
+}
+
+.single-car {
+  flex-direction: column;
+  padding: 4rem 2rem;
+}
+.single-car p {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 2.3rem;
+  border-top: #2d3748 1px solid;
+  padding: 3rem 4rem 0;
 }
 
 header {
@@ -320,6 +340,7 @@ a.add_car_btn {
   color: #F1FAEE;
   border-radius: 5px;
   transition: 0.3s;
+  margin: 2rem 0;
 }
 a.add_car_btn:hover {
   background-color: #a02329;

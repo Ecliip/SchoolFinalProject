@@ -1,6 +1,6 @@
 @extends('layouts.classic')
 @section('content')
-    <a class="add_car_btn" href="{{route('submit-form.car')}}">Anadir un coche</a>
+    <a class="add_car_btn" href="{{route('submit-form.car')}}">Añadir un coche</a>
     @foreach($cars as $car)
     <div class="car">
         <div class="image-box-sm">
@@ -52,7 +52,8 @@
         </div>
     </div>
     @endforeach
-    <div class="pagination" style="margin: 2rem; ">
-        {{$cars->links()}}
+    <div class="pagination" style="margin: 2rem; display: flex">
+       <span style="margin: auto">{{$cars->links()}}</span>
     </div>
+    <a class="add_car_btn" href="{{route('submit-form.car')}}">Añadir un coche</a>
 @endsection
