@@ -26,6 +26,8 @@ Route::get('/', [UniversalGetAllController::class, 'getTenOfAll'])->name('home.p
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [CategoryController::class, 'showAll'])->name('dashboard');
 Route::post('category/add', [CategoryController::class, 'add'])->name('add.category');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('delete.category');
+Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('edit.category');
+Route::get('/category/update/{id}', [CategoryController::class, 'update'])->name('update.category');
 
 Route::post('brand/add', [BrandController::class, 'add'])->name('add.brand');
 Route::get('/brand/delete/{id}', [BrandController::class, 'delete'])->name('delete.brand');

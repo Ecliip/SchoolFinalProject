@@ -59,6 +59,11 @@ class CategoryController extends Controller
         return redirect()->back()->with('success', 'Category was added successfully');
     }
 
+    public function edit($id) {
+        $category = Category::find($id);
+        return view('category-edit')->with(compact('category'));
+    }
+
     public function delete($id) {
         $category = Category::find($id);
         unlink($category->photo_sm);

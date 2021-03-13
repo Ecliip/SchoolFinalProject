@@ -155,7 +155,7 @@
                         <img src="{{asset($category->photo_sm)}}">
                     </div>
                     <div class="buttons-group">
-                        <a href="#">Edit</a>
+                        <a href="{{route('edit.category', $category->id)}}">Editar</a>
                         <a href="{{route('delete.category', $category->id)}}">Delete</a>
                     </div>
                 </div>
