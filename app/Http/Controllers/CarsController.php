@@ -219,7 +219,14 @@ class CarsController extends Controller
                 'updated_at' => Carbon::now(),
             ]) ;
         }
-
         return redirect()->route('all.car')->with('success', 'CarModel was updated');
+    }
+
+    public function delete($id) {
+        $car = Car::find($id);
+        unlink($car->photo_sm);
+        unlink($car->photo_md);
+        Car::find($id)->delete();
+        return redirect()->back()->with('success', 'Car was deleted');
     }
 }

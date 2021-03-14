@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Car;
 use App\Models\CarModel;
 use App\Models\Category as Category;
 use Carbon\Carbon;
@@ -58,6 +59,17 @@ class CarModelController extends Controller
 
     public function delete($id) {
         $carModel = CarModel::find($id);
+        $cars = Car::where('car_model_id', $id)->get();
+
+        if ($cars) {
+            foreach ($cars as $car) {
+                unlink($car->photo_sm);
+                unlink($car->photo_md);
+            }
+        }
+
+
+
         unlink($carModel->photo_sm);
         unlink($carModel->photo_md);
         CarModel::find($id)->delete();

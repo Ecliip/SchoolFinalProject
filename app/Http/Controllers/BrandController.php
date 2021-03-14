@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Brand;
+use App\Models\Car;
+use App\Models\CarModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -55,6 +57,23 @@ class BrandController extends Controller
 
     public function delete($id) {
         $brand = Brand::find($id);
+
+        $cars = Car::where('brand_id', $id)->get();
+        $carModels = CarModel::where('brand_id', $id)->get();
+
+        if ($cars) {
+            foreach ($cars as $car) {
+                unlink($car->photo_sm);
+                unlink($car->photo_md);
+            }
+        }
+        if ($carModels) {
+            foreach ($carModels  as $model) {
+                unlink($model->photo_sm);
+                unlink($model->photo_md);
+            }
+        }
+
         unlink($brand->photo_sm);
         unlink($brand->photo_md);
         Brand::find($id)->delete();
