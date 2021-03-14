@@ -177,7 +177,7 @@
                         <img src="{{asset($brand->photo_sm)}}">
                     </div>
                     <div class="buttons-group">
-                        <a href="#">Edit</a>
+                        <a href="{{route('edit.brand', $brand->id)}}">Edit</a>
                         <a href="{{route('delete.brand', $brand->id)}}">Delete</a>
                     </div>
                 </div>

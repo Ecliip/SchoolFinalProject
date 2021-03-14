@@ -31,6 +31,8 @@ Route::post('/category/update/{id}', [CategoryController::class, 'update'])->nam
 
 Route::post('brand/add', [BrandController::class, 'add'])->name('add.brand');
 Route::get('/brand/delete/{id}', [BrandController::class, 'delete'])->name('delete.brand');
+Route::get('/brand/edit/{id}', [BrandController::class, 'edit'])->name('edit.brand');
+Route::post('/brand/update/{id}', [BrandController::class, 'update'])->name('update.brand');
 
 Route::post('car-model/add', [CarModelController::class, 'add'])->name('add.car-model');
 Route::get('/car-model/delete/{id}', [CarModelController::class, 'delete'])->name('delete.car-model');
