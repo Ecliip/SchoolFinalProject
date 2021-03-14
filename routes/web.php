@@ -44,6 +44,8 @@ Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('sub
 Route::post('car/add', [CarsController::class, 'add'])->name('add.car');
 Route::get('car/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.car');
 Route::get('car/info/{id}', [CarsController::class, 'showCar'])->name('info.car');
+Route::get('car/edit/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.edit.car');
+Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car');
 
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');

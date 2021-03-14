@@ -86,6 +86,7 @@ class CarsController extends Controller
 
 
         Car::insert([
+            'description' => "Replace replace",
             'price' => $request->price,
             'engine'=> $request->engine,
             'power_hp'=> $request->power_hp,
@@ -109,9 +110,16 @@ class CarsController extends Controller
     }
 
     public function getModelsByBrandId($id) {
-
 //        $models = CarModel::all();
         $models = CarModel::where('brand_id', $id)->get();
         return response()->json($models);
+    }
+
+    public function edit (Request $request, $id) {
+        $car = Car::find($id);
+        $brands = Brand::all();
+        $categories = Category::all();
+//        $carModel = $car->carModel->id;
+        return view('car-edit-form')->with(compact('car', 'brands', 'categories'));
     }
 }

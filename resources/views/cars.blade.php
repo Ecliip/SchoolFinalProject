@@ -48,6 +48,7 @@
                     </li>
                 </div>
             </ul>
+            <a href="{{route('edit.car', $car->id)}}">Editar...</a>
             <a href="{{route('info.car', $car->id)}}">Ver...</a>
         </div>
     </div>

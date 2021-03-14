@@ -57,9 +57,9 @@ class CarModelController extends Controller
     }
 
     public function delete($id) {
-        $brand = Brand::find($id);
-        unlink($brand->photo_sm);
-        unlink($brand->photo_md);
+        $carModel = CarModel::find($id);
+        unlink($carModel->photo_sm);
+        unlink($carModel->photo_md);
         CarModel::find($id)->delete();
         return redirect()->back()->with('success', 'Model was deleted');
     }
