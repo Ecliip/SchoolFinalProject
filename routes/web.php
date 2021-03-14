@@ -36,6 +36,8 @@ Route::post('/brand/update/{id}', [BrandController::class, 'update'])->name('upd
 
 Route::post('car-model/add', [CarModelController::class, 'add'])->name('add.car-model');
 Route::get('/car-model/delete/{id}', [CarModelController::class, 'delete'])->name('delete.car-model');
+Route::get('/car-model/edit/{id}', [CarModelController::class, 'edit'])->name('edit.car-model');
+Route::post('/car-model/update/{id}', [CarModelController::class, 'update'])->name('update.car-model');
 
 Route::get('cars', [CarsController::class, 'index'])->name('all.car');
 Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('submit-form.car');

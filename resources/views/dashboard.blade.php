@@ -197,7 +197,7 @@
                         <div>Categoria: {{$carModel->category->cat_name}}</div>
                         <div>Marca: {{$carModel->brand->brand_name}}</div>
                         <div class="buttons-group">
-                            <a href="#">Edit</a>
+                            <a href="{{route('edit.car-model', $carModel->id)}}">Edit</a>
                             <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>
                         </div>
                     </div>
