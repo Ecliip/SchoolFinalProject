@@ -19,7 +19,7 @@ class BrandController extends Controller
 
     public function add(Request $request) {
         $request->validate([
-            'brand_name'=>'required|min:5',
+            'brand_name'=>'required|min:2',
             'description'=>'required|min:10|max:2000',
 //            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required'
