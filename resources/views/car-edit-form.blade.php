@@ -9,7 +9,7 @@
     <div class="icon-box">
         <img src="{{asset('images/design/clock.png')}}">
     </div>
-    <form class="form form__email" method="post" action="{{route('add.car')}}" enctype="multipart/form-data">
+    <form class="form form__email" method="post" action="{{route('update.car', $car->id)}}" enctype="multipart/form-data">
         @csrf
         <input type="number" name="price" placeholder="precio" min="200" max="1000000" required  value="{{$car->price}}">
         @error('price')
@@ -18,27 +18,26 @@
         <select name="engine">
 
             <option selected value="{{$car->engine}}">{{$car->engine}}</option>
-            <option value="unknown">Tipo de combustible</option>
             <option value="Gasolina">Gasolina</option>
             <option value="Diesel">Diesel</option>
             <option value="Eléctrico">Eléctrico</option>
-            <option value="Mix">Eléctrico</option>
+            <option value="Mix">Mix</option>
         </select>
         @error('engine')
             <span class="text-error">{{$message}}</span>
         @enderror
 
-        <input type="number" name="power_hp" min="1" max="1300" placeholder="potencia en cv" required >
+        <input type="number" name="power_hp" min="1" max="1300" placeholder="potencia en cv" value="{{$car->power_hp}}" required >
         @error('power_hp')
             <span class="text-error">{{$message}}</span>
         @enderror
 
-        <input type="number" name="kilometers" placeholder="KM" min="0" max="300000" required >
+        <input type="number" name="kilometers" placeholder="KM" min="0" max="300000" value="{{$car->kilometers}}" required >
         @error('kilometers')
             <span class="text-error">{{$message}}</span>
         @enderror
 
-        <input type="number" name="doors" placeholder="puertas" min="1" max="10" required >
+        <input type="number" name="doors" placeholder="puertas" min="1" max="10" value="{{$car->doors}}" required >
         @error('doors')
             <span class="text-error">{{$message}}</span>
         @enderror
@@ -63,12 +62,10 @@
         @error('traccion')
             <span class="text-error">{{$message}}</span>
         @enderror
-        <input type="number" name="year" placeholder="año" min="1900" max="{{$year}}" required >
+        <input type="number" name="year" placeholder="año" min="1900" max="{{$year}}" value="{{$car->year}}" required >
         @error('year')
             <span class="text-error">{{$message}}</span>
         @enderror
-
-        <input type="hidden" name="isSold" value=0>
 
         <div class="select-box">
             <h4>Tipo de carroceria</h4>
@@ -103,27 +100,17 @@
                 <span class="text-error">{{$message}}</span>
             @enderror
         </div>
-        <div class="radio-box">
-            <h4>Es nuevo o usado</h4>
-            <div>
-                <label for="isNewTrue">nuevo</label>
-                <input type="radio" name="isNew" value=1 id="isNewTrue">
-            </div>
-            <div>
-                <label for="isNewFalse">usado</label>
-                <input type="radio" name="isNew" value=0 id="isNewFalse">
-            </div>
-            @error('isNew')
-                <span class="text-error">{{$message}}</span>
-            @enderror
-        </div>
         <div class="select-box">
             <label for="imageInput">Elegir una foto</label>
-            <input type="file" name="image" id="imageInput">
+            <input type="file" name="photo" id="imageInput">
             @error('image')
                 <span class="text-error">{{$message}}</span>
             @enderror
         </div>
+
+        <input type="hidden" name="old_photo_sm" value="{{$car->photo_sm}}">
+        <input type="hidden" name="old_photo_md" value="{{$car->photo_md}}">
+
         <button class="btn" type="submit">Subir</button>
     </form>
 </div>

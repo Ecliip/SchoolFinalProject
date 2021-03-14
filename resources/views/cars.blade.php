@@ -27,6 +27,10 @@
                         <span class="car__mini-title">Potencia CV: </span>
                         <span class="car__data">{{$car->power_hp}}</span>
                     </li>
+                    <li>
+                        <span class="car__mini-title">Combustible: </span>
+                        <span class="car__data">{{$car->engine}}</span>
+                    </li>
                 </div>
                 <div>
                     <li>

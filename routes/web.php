@@ -46,6 +46,7 @@ Route::get('car/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBr
 Route::get('car/info/{id}', [CarsController::class, 'showCar'])->name('info.car');
 Route::get('car/edit/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.edit.car');
 Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car');
+Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car');
 
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');
