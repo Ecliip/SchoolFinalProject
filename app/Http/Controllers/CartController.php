@@ -22,7 +22,7 @@ class CartController extends Controller
             array_push($carsArr, $theCar);
         }
 
-        return view('cart')->with(compact('carsArr', 'userCartId', 'cars'));
+        return view('cart')->with(compact('carsArr', 'userCartId'));
     }
 
     public function add($id) {
