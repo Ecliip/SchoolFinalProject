@@ -169,6 +169,9 @@ table {
   border-radius: 5px;
   box-shadow: #2d3748 0 0 2rem;
 }
+table .a_delete {
+  color: #ce272e;
+}
 table thead {
   font-weight: 600;
   font-size: 2rem;

@@ -6,7 +6,7 @@
 
                 <div class="the-wrapper-25">
                     @foreach($categories as $category)
-                        <a href="#">
+                        <a href="{{route('all.car')}}">
                             <div class="card-25">
                                 <h3>{{$category->category}}</h3>
                                 <div class="image-box-sm">
@@ -25,7 +25,7 @@
             <h2>Marcas mas populares</h2>
             <div class="the-wrapper-25">
                 @foreach($brands as $brand)
-                    <a href="#">
+                    <a href="{{route('all.car')}}">
                         <div class="card-25">
                             <h3>{{$brand->brand}}</h3>
                             <div class="image-box-sm">
@@ -35,7 +35,7 @@
                     </a>
                 @endforeach
             </div>
-            <a class="open-all" href="all.car">Ver todas las marcas</a>
+            <a class="open-all" href="{{route('all.car')}}">Ver todas las marcas</a>
         </section>
     @endif
     @if($models->count() > 0)
@@ -43,7 +43,7 @@
             <h2>Modelos mas populares</h2>
             <div class="the-wrapper-25">
                 @foreach($models as $model)
-                    <a href="#">
+                    <a href="{{route('all.car')}}">
                         <div class="card-25">
                             <h3>{{$model->model}}</h3>
                             <div class="image-box-sm">
@@ -53,7 +53,7 @@
                     </a>
                 @endforeach
             </div>
-            <a class="open-all" href="all.car">Ver todas los modelos</a>
+            <a class="open-all" href="{{route('all.car')}}">Ver todas los modelos</a>
         </section>
     @endif
 @endsection
