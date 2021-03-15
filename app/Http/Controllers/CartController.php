@@ -30,4 +30,9 @@ class CartController extends Controller
         ]);
         return redirect()->back()->with('success', 'Has agregado el coche a tu carrito');
     }
+
+    public function delete($id) {
+        CarCart::find($id)->delete();
+        return redirect()->back();
+    }
 }

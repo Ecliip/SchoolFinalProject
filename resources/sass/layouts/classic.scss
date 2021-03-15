@@ -175,7 +175,6 @@ section {
     flex-direction: column;
     padding: 4rem 2rem;
 
-
     & p {
         margin-top: 2rem;
         text-align: justify;
@@ -197,16 +196,10 @@ table {
     border-radius: 5px;
     box-shadow: #2d3748  0 0 2rem;
 
-
-
     thead {
         font-weight: 600;
         font-size: 2rem;
         color: $imperialRed;
-
-        //td {
-        //    padding: 1rem 2rem;
-        //}
     }
 
     tr {
@@ -244,10 +237,6 @@ table {
             font-size: 1.5rem;
             white-space: nowrap;
         }
-    }
-
-    tr:not(:last-of-type) {
-        //margin-bottom: 1rem;
     }
 }
 

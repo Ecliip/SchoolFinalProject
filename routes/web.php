@@ -52,5 +52,6 @@ Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.
 
 Route::get('cart', [CartController::class, 'index'])->name('all.cart');
 Route::get('cart/add/{id}', [CartController::class, 'add'])->name('add.cart');
+Route::get('cart/delete/{id}', [CartController::class, 'delete'])->name('delete.cart');
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');
