@@ -27,6 +27,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function cart() {
+        return $this->belongsTo(Cart::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

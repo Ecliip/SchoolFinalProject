@@ -49,5 +49,6 @@ Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car');
 Route::get('car/delete/{id}', [CarsController::class, 'delete'])->name('delete.car');
 Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car');
 
+Route::get('cart', [CarsController::class, 'index'])->name('all.cart');
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');

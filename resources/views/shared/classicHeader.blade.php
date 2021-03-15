@@ -23,8 +23,7 @@
                     <p class="name">{{Auth::user()->name}}</p>
                     <a href="{{ url('/dashboard') }}" class="nav-link">Configuración</a>
                     <a href="{{ route('user.logout') }}" class="nav-link">Salir</a>
-                    <a href="#" class="nav-link">Mi Carrito</a>
-
+                    <a href="{{route('all.cart')}}}" class="nav-link">Mi Carrito</a>
                 @else
                     <a href="{{ route('login') }}" class="nav-link">Log in</a>
                     @if (Route::has('register'))
