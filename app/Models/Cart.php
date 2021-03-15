@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
 
-    pubic function user() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 

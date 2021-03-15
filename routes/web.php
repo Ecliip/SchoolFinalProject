@@ -51,6 +51,6 @@ Route::get('car/delete/{id}', [CarsController::class, 'delete'])->name('delete.c
 Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car');
 
 Route::get('cart', [CartController::class, 'index'])->name('all.cart');
-Route::post('cart/add/{id}', [CartController::class, 'add'])->name('add.cart');
+Route::get('cart/add/{id}', [CartController::class, 'add'])->name('add.cart');
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');
