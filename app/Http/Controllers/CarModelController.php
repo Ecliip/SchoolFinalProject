@@ -68,8 +68,6 @@ class CarModelController extends Controller
             }
         }
 
-
-
         unlink($carModel->photo_sm);
         unlink($carModel->photo_md);
         CarModel::find($id)->delete();
@@ -90,11 +88,9 @@ class CarModelController extends Controller
             'category_id' => 'required',
             'brand_id' => 'required',
         ]);
-
         $old_photo_sm = $request->old_photo_sm;
         $old_photo_md = $request->old_photo_md;
         $image = $request->file('photo');
-
 
         if($image) {
             $generatedName = hexdec(uniqid());

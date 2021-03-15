@@ -5,15 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\CarCart;
 use App\Models\Cart;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index() {
-
-
         $userCartId = Cart::firstWhere('user_id', Auth::user()->id);
         $cars = CarCart::where('cart_id', $userCartId->id)->get();
         $carsArr = array();
@@ -21,11 +17,17 @@ class CartController extends Controller
             $theCar = Car::find($car);
             array_push($carsArr, $theCar);
         }
-
         return view('cart')->with(compact('carsArr', 'userCartId'));
     }
 
     public function add($id) {
+        $cart = Cart::firstWhere('user_id', Auth::user()->id);
+        if (!$cart) {
+            Cart::insert([
+               'user_id' => Auth::user()->id,
+            ]);
+        }
+
         CarCart::insert([
             'car_id' => $id,
             'cart_id' =>Auth::user()->cart->id,
