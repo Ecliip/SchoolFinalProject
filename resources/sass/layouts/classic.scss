@@ -184,3 +184,71 @@ section {
         padding: 3rem 4rem 0;
     }
 }
+
+table {
+    width: 100%;
+    flex: 1;
+    background: $prussianBlue;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    color: $honeydew;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: #2d3748  0 0 2rem;
+
+
+
+    thead {
+        font-weight: 600;
+        font-size: 2rem;
+        color: $imperialRed;
+
+        //td {
+        //    padding: 1rem 2rem;
+        //}
+    }
+
+    tr {
+        text-align: center;
+        margin: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        td {
+            margin: auto;
+            padding-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 10rem;
+            min-height: 2rem;
+            white-space: nowrap;
+        }
+
+        td:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+
+        .ti-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                margin: 0;
+            }
+        }
+
+        .ti-carName {
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+    }
+
+    tr:not(:last-of-type) {
+        //margin-bottom: 1rem;
+    }
+}
+
+

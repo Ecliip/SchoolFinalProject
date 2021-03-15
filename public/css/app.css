@@ -157,6 +157,54 @@ section .open-all {
   padding: 3rem 4rem 0;
 }
 
+table {
+  width: 100%;
+  flex: 1;
+  background: #1D3557;
+  padding: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  color: #F1FAEE;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: #2d3748 0 0 2rem;
+}
+table thead {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #ce272e;
+}
+table tr {
+  text-align: center;
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+table tr td {
+  margin: auto;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 10rem;
+  min-height: 2rem;
+  white-space: nowrap;
+}
+table tr td:not(:last-of-type) {
+  margin-right: 1rem;
+}
+table tr .ti-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table tr .ti-photo div {
+  margin: 0;
+}
+table tr .ti-carName {
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
 header {
   border-bottom: 1px solid #2d3748;
   color: #F1FAEE;
