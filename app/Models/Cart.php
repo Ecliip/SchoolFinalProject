@@ -12,7 +12,7 @@ class Cart extends Model
     protected $guarded = [];
 
     pubic function user() {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function cars() {

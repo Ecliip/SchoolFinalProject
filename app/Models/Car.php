@@ -37,7 +37,7 @@ class Car extends Model
     }
 
     public function cart() {
-        return $this->belongsTo(Cart::class);
+        return $this->hasOne(Cart::class);
     }
 
 }
