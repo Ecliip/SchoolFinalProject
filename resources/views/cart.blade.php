@@ -10,19 +10,17 @@
             </tr>
         </thead>
         <tbody>
-
                 @foreach($carsArr as $car)
-                    @foreach($car as $c_item)
+{{--                    @foreach($car as $c_item)--}}
                         <tr class="tr">
-                            <td class="ti-photo"><div class="image-box-sm"><img src="{{asset($c_item->photo_sm)}}"></div></td>
-                            <td class="ti-carName">{{$c_item->brand->brand_name}} {{$c_item->carModel->model_name}}</td>
-                            <td>{{$c_item->price}}</td>
-                            <td><a class="a_delete" href="{{route('delete.cart', $c_item->id)}}">Eliminar</a></td>
+                            <td class="ti-photo"><div class="image-box-sm"><img src="{{asset($car->photo_sm)}}"></div></td>
+                            <td class="ti-carName">{{$car->brand->brand_name}} {{$car->carModel->model_name}}</td>
+                            <td>{{$car->price}}</td>
+                            <td><a class="a_delete" href="{{route('delete.cart', $car->id)}}">Eliminar</a></td>
                         </tr>
-                    @endforeach
+{{--                    @endforeach--}}
                 @endforeach
-
-
         </tbody>
     </table>
+        <span class="totalPrice">The total price is: {{$totalPrice}}</span>
 @endsection

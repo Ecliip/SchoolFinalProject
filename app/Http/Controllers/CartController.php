@@ -13,11 +13,15 @@ class CartController extends Controller
         $userCartId = Cart::firstWhere('user_id', Auth::user()->id);
         $cars = CarCart::where('cart_id', $userCartId->id)->get();
         $carsArr = array();
+
+        $totalPrice = 0;
         foreach ($cars as $car) {
             $theCar = Car::find($car);
-            array_push($carsArr, $theCar);
+            array_push($carsArr, $theCar[0]);
+            $carColl = collect($theCar);
+            $totalPrice += $carColl[0]->price;
         }
-        return view('cart')->with(compact('carsArr', 'userCartId'));
+        return view('cart')->with(compact('carsArr', 'userCartId', 'totalPrice'));
     }
 
     public function add($id) {

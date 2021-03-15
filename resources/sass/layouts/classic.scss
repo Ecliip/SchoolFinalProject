@@ -194,6 +194,7 @@ table {
     color: $honeydew;
     text-transform: uppercase;
     border-radius: 5px;
+    border-bottom-right-radius: 0;
     box-shadow: #2d3748  0 0 2rem;
 
     .a_delete {
@@ -244,4 +245,15 @@ table {
     }
 }
 
+.totalPrice {
+    text-align: right;
+    margin-top: 0rem;
+    padding: 2rem;
+    background-color: $prussianBlue;
+    float: right;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 2.2rem;
+    color: $honeydew;
+}
 
