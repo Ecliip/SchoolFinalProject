@@ -52,6 +52,7 @@
                     </li>
                 </div>
             </ul>
+            <a href="{{route('add.cart', $car->id)}}">Agregar a cesta...</a>
             <a href="{{route('edit.car', $car->id)}}">Editar...</a>
             <a href="{{route('info.car', $car->id)}}">Ver...</a>
             <a href="{{route('delete.car', $car->id)}}">Delete...</a>

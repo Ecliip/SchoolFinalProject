@@ -36,8 +36,8 @@ class Car extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function cart() {
-        return $this->hasOne(Cart::class);
+    public function carts() {
+        return $this->belongsToMany(Cart::class);
     }
 
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarModelController;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SessionController;
@@ -49,6 +50,7 @@ Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car');
 Route::get('car/delete/{id}', [CarsController::class, 'delete'])->name('delete.car');
 Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car');
 
-Route::get('cart', [CarsController::class, 'index'])->name('all.cart');
+Route::get('cart', [CartController::class, 'index'])->name('all.cart');
+Route::post('cart/add/{id}', [CartController::class, 'add'])->name('add.cart');
 
 Route::get('/user/logout', [SessionController::class, 'logout'])->name('user.logout');
