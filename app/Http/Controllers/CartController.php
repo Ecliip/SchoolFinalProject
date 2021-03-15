@@ -12,15 +12,17 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     public function index() {
-        $userCartId = Cart::first('user_id', Auth::user()->id);
-        $cars = CarCart::where('cart_id', $userCartId->user_id)->get();
+
+
+        $userCartId = Cart::firstWhere('user_id', Auth::user()->id);
+        $cars = CarCart::where('cart_id', $userCartId->id)->get();
         $carsArr = array();
         foreach ($cars as $car) {
             $theCar = Car::find($car);
             array_push($carsArr, $theCar);
         }
 
-        return view('cart')->with(compact('carsArr'));
+        return view('cart')->with(compact('carsArr', 'userCartId', 'cars'));
     }
 
     public function add($id) {
@@ -32,7 +34,9 @@ class CartController extends Controller
     }
 
     public function delete($id) {
-        CarCart::find($id)->delete();
+        CarCart::firstWhere('cart_id', Auth::user()->cart->id)->firstWhere('car_id', $id)->delete();
         return redirect()->back();
     }
 }
+
+

@@ -11,6 +11,7 @@
         </thead>
         <tbody>
 
+        {{$cars}}
                 @foreach($carsArr as $car)
                     @foreach($car as $c_item)
                         <tr class="tr">
