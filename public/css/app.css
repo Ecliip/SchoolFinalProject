@@ -211,15 +211,15 @@ table tr .ti-carName {
 }
 
 .totalPrice {
-  text-align: right;
-  margin-top: 0rem;
   padding: 2rem;
   background-color: #1D3557;
-  float: right;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 2.2rem;
   color: #F1FAEE;
+  margin-left: auto;
+  width: 30rem;
+  margin-bottom: 2rem;
 }
 
 header {
