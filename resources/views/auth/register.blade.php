@@ -1,13 +1,19 @@
 @extends('layouts.xy-centered')
 @section('content')
-<form class="form form__email" method="post" action="{{route('register')}}">
-    @csrf
-    <input type="text" name="name" placeholder="name" required >
-    <input type="email" name="email" placeholder="email" required >
-    <input type="password" name="password" placeholder="password" required >
-    <input type="password" name="password_confirmation" placeholder="password confirmation" required >
-    <button type="submit">Submit</button>
-</form>
+    <div class="form-container">
+        <h2>Regístrate en <a href="{{route('home.page')}}">supercars.web</a></h2>
+        <div class="icon-box">
+            <img src="{{asset('images/design/i-escudo.png')}}">
+        </div>
+        <form class="form form__email" method="post" action="{{route('register')}}">
+            @csrf
+            <input type="text" name="name" placeholder="Nombre" required >
+            <input type="email" name="email" placeholder="Email" required >
+            <input type="password" name="password" placeholder="Contraseña" required >
+            <input type="password" name="password_confirmation" placeholder="Confirmar contraseña" required >
+            <button class="btn" type="submit">Enviar</button>
+        </form>
+    </div>
 @endsection
 
 

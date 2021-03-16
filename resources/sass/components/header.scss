@@ -8,6 +8,41 @@ header {
     border-bottom: 1px solid #2d3748;
     color: $honeydew;
 
+    .logo {
+        text-transform: uppercase;
+        & .sufix, & .prefix {
+
+            padding: 1rem .5rem;
+            transition: .5s;
+        }
+
+        & .prefix {
+            background-color: $imperialRed;
+            color: $honeydew;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        & .sufix {
+            background-color: $honeydew;
+            color: $imperialRed;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+
+    .logo:hover {
+        & .prefix {
+            background-color: $honeydew;
+            color: $imperialRed;
+        }
+
+        & .sufix {
+            background-color: $imperialRed;
+            color: $honeydew;
+        }
+    }
+
     & nav {
         display: flex;
         justify-content: space-between;

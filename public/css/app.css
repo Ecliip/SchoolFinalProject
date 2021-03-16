@@ -231,6 +231,33 @@ header {
   border-bottom: 1px solid #2d3748;
   color: #F1FAEE;
 }
+header .logo {
+  text-transform: uppercase;
+}
+header .logo .sufix, header .logo .prefix {
+  padding: 1rem 0.5rem;
+  transition: 0.5s;
+}
+header .logo .prefix {
+  background-color: #ce272e;
+  color: #F1FAEE;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+header .logo .sufix {
+  background-color: #F1FAEE;
+  color: #ce272e;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+header .logo:hover .prefix {
+  background-color: #F1FAEE;
+  color: #ce272e;
+}
+header .logo:hover .sufix {
+  background-color: #ce272e;
+  color: #F1FAEE;
+}
 header nav {
   display: flex;
   justify-content: space-between;

@@ -14,6 +14,7 @@
         @if (Route::has('login'))
             <nav class="nav">
                 <div class="center">
+                    <a class="logo" href="{{route('home.page')}}"><span class="prefix">Supercars</span><span class="sufix">.web</span></a>
                     <a href="{{route('all.car')}}">Coches nuevos</a>
                     <a href="{{route('all.car')}}">Coches usados</a>
                     <a href="{{route('submit-form.car')}}">Vender mi coche</a>
