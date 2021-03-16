@@ -43,6 +43,11 @@ section .open-all {
 }
 .the-wrapper .wrapped-col {
   flex: 1 1 30rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .the-wrapper .wrapped-col:not(:last-of-type) {
   margin-right: 2rem;
@@ -351,6 +356,10 @@ footer .banner {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.form .file-wrapper {
+  margin: 2rem 0;
+  text-align: center;
 }
 .form input:not(:last-of-type) {
   margin-bottom: 1rem;

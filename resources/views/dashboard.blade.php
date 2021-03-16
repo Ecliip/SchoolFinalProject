@@ -8,7 +8,7 @@
     <div class="the-wrapper">
         <div class="wrapped-col">
             <h2>Añadir una categoria</h2>
-            <form class="row g-3" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="categoryField" class="form-label">Categoria</label>
@@ -24,7 +24,7 @@
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="mb-3">
+                <div class="file-wrapper">
                     <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')
@@ -39,7 +39,7 @@
 
         <div class="wrapped-col">
             <h2>Añadir una marca</h2>
-            <form class="row g-3" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="brandField" class="form-label">Marca</label>
@@ -55,7 +55,7 @@
                     <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="mb-3">
+                <div class="file-wrapper">
                     <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')
@@ -70,7 +70,7 @@
 
         <div class="wrapped-col">
             <h2>Añadir un Modelo</h2>
-            <form class="row g-3" action="{{route('add.car-model')}}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{route('add.car-model')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="modelName" class="form-label">Model</label>
@@ -110,7 +110,7 @@
                         @enderror
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="file-wrapper">
                     <label for="formFile" class="form-label">Selecciona una foto</label>
                     <input class="form-control" name="photo" type="file" id="formFile">
                     @error('photo')

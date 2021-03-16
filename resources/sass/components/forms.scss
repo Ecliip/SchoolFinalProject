@@ -49,6 +49,12 @@
         flex-direction: column;
 
     }
+
+    & .file-wrapper {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
     & input:not(:last-of-type) {
         margin-bottom: 1rem;
     }
