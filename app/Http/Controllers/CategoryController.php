@@ -15,6 +15,12 @@ class CategoryController extends Controller
 {
 // TODO have to manage exceptions https://laravel.com/docs/8.x/errors#the-exception-handler
 // TODO create admin-pages for Categories/Brands/Model/Cars/
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function showAll() {
         $categories = Category::latest()->get();
         $brands = Brand::latest()->get();

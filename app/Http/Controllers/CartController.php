@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $userCartId = Cart::firstWhere('user_id', Auth::user()->id);
         $cars = CarCart::where('cart_id', $userCartId->id)->get();

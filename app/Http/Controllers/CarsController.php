@@ -13,6 +13,9 @@ use Intervention\Image\Facades\Image;
 
 class CarsController extends Controller
 {
+
+
+
     public function index() {
         $cars = Car::latest()->simplePaginate(3);
         return view('cars')->with(compact('cars'));

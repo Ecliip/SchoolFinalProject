@@ -41,14 +41,14 @@ Route::get('/car-model/edit/{id}', [CarModelController::class, 'edit'])->name('e
 Route::post('/car-model/update/{id}', [CarModelController::class, 'update'])->name('update.car-model');
 
 Route::get('cars', [CarsController::class, 'index'])->name('all.car');
-Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('submit-form.car');
-Route::post('car/add', [CarsController::class, 'add'])->name('add.car');
+Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('submit-form.car')->middleware('auth');
+Route::post('car/add', [CarsController::class, 'add'])->name('add.car')->middleware('auth');
 Route::get('car/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.car');
 Route::get('car/info/{id}', [CarsController::class, 'showCar'])->name('info.car');
-Route::get('car/edit/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.edit.car');
-Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car');
-Route::get('car/delete/{id}', [CarsController::class, 'delete'])->name('delete.car');
-Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car');
+Route::get('car/edit/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.edit.car')->middleware('auth');
+Route::get('car/edit/{id}', [CarsController::class, 'edit'])->name('edit.car')->middleware('auth');
+Route::get('car/delete/{id}', [CarsController::class, 'delete'])->name('delete.car')->middleware('auth');
+Route::post('car/update/{id}', [CarsController::class, 'update'])->name('update.car')->middleware('auth');
 
 Route::get('cart', [CartController::class, 'index'])->name('all.cart');
 Route::get('cart/add/{id}', [CartController::class, 'add'])->name('add.cart');
