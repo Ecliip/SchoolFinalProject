@@ -3,11 +3,11 @@
 
     <div class="container-horizontal">
         <aside class="aside-col">
-            <form method="get" action="{{route('all.car')}}">
+{{--            <form method="get" action="{{route('all.car')}}">--}}
                 <ul>
                     <li>Carroceria:
                         <div>
-                            <select onchange="getCarsByCategory(this.value)" name="category_id">
+                            <select id="category" name="category_id">
                                 <option value=-1>Elige carroceria</option>
                                 @foreach($categories as $category)
                                     <option value={{$category->id}}>{{$category->cat_name}}</option>
@@ -15,84 +15,105 @@
                             </select>
                         </div>
                     </li>
-                    <li>Precio:
+                    <li>Marca:
                         <div>
-                            <select name="precio">
-                                <option value="-1">Elige precio</option>
-                                <option value="3000 - 4999">3000 - 4999</option>
-                                <option value="5000 - 9999">5000 - 9999</option>
-                                <option value="10000 - 19999">10000 - 19999</option>
-                                <option value=">20000">>20000</option>
+                            <select id="brand" name="brand_id">
+                                <option value=-1>Elige marca</option>
+                                @foreach($brands as $brand)
+                                    <option  value={{$brand->id}}>{{$brand->brand_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </li>
-                    <li>Potencia CV
+                    <li>Modelo:
                         <div>
-                            <select name="cvs">
-                                <option value="-1">Elige potencia en cv</option>
-                                <option value="50 - 99">50 - 99</option>
-                                <option value="100 - 199">100 - 199</option>
-                                <option value="200 - 499">200 - 499</option>
-                                <option value=">500">>500</option>
+                            <select id="model"  name="model_id">
+                                <option value=-1>Elige modelo</option>
+                                @foreach($models as $model)
+                                    <option  value={{$model->id}}>{{$model->model_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </li>
-                    <li>Combustible:
-                        <div>
-                            <select name="engine">
-                                <option value="unknown">Tipo de combustible</option>
-                                <option value="Gasolina">Gasolina</option>
-                                <option value="Diesel">Diesel</option>
-                                <option value="Eléctrico">Eléctrico</option>
-                                <option value="Mix">Mix</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>Kilómetros:
-                        <div>
-                            <select name="engine">
-                                <option value="unknown">Kilometraje</option>
-                                <option value="0">0</option>
-                                <option value=">1">1</option>
-                                <option value=">10000">10000</option>
-                                <option value="30000">30000</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>puertas:
-                        <div>
-                            <select name="engine">
-                                <option value="unknown">puertas</option>
-                                <option value=">1">1</option>
-                                <option value=">2">2</option>
-                                <option value=">5">>5</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>transmisión:
-                        <div>
-                            <select name="transmission">
-                                <option value="unknown">Tipo de transmisión</option>
-                                <option value="Automático">Automática</option>
-                                <option value="Manual">Manual</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>tracción:
-                        <div>
-                            <select name="traccion">
-                                <option value="unknown">Tipo de tracción</option>
-                                <option value="Fwd">Delantera</option>
-                                <option value="Rwd">Rwd</option>
-                                <option value="Awd">Awd</option>
-                                <option value="x_4wd">x_4wd</option>
-                                <option value="x_4x4">4x4</option>
-                            </select>
-                        </div>
-                    </li>
+
+{{--                    <li>Precio:--}}
+{{--                        <div>--}}
+{{--                            <select name="precio">--}}
+{{--                                <option value="-1">Elige precio</option>--}}
+{{--                                <option value="3000 - 4999">3000 - 4999</option>--}}
+{{--                                <option value="5000 - 9999">5000 - 9999</option>--}}
+{{--                                <option value="10000 - 19999">10000 - 19999</option>--}}
+{{--                                <option value=">20000">>20000</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>Potencia CV--}}
+{{--                        <div>--}}
+{{--                            <select name="cvs">--}}
+{{--                                <option value="-1">Elige potencia en cv</option>--}}
+{{--                                <option value="50 - 99">50 - 99</option>--}}
+{{--                                <option value="100 - 199">100 - 199</option>--}}
+{{--                                <option value="200 - 499">200 - 499</option>--}}
+{{--                                <option value=">500">>500</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>Combustible:--}}
+{{--                        <div>--}}
+{{--                            <select name="engine">--}}
+{{--                                <option value="unknown">Tipo de combustible</option>--}}
+{{--                                <option value="Gasolina">Gasolina</option>--}}
+{{--                                <option value="Diesel">Diesel</option>--}}
+{{--                                <option value="Eléctrico">Eléctrico</option>--}}
+{{--                                <option value="Mix">Mix</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>Kilómetros:--}}
+{{--                        <div>--}}
+{{--                            <select name="engine">--}}
+{{--                                <option value="unknown">Kilometraje</option>--}}
+{{--                                <option value="0">0</option>--}}
+{{--                                <option value=">1">1</option>--}}
+{{--                                <option value=">10000">10000</option>--}}
+{{--                                <option value="30000">30000</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>puertas:--}}
+{{--                        <div>--}}
+{{--                            <select name="engine">--}}
+{{--                                <option value="unknown">puertas</option>--}}
+{{--                                <option value=">1">1</option>--}}
+{{--                                <option value=">2">2</option>--}}
+{{--                                <option value=">5">>5</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>transmisión:--}}
+{{--                        <div>--}}
+{{--                            <select name="transmission">--}}
+{{--                                <option value="unknown">Tipo de transmisión</option>--}}
+{{--                                <option value="Automático">Automática</option>--}}
+{{--                                <option value="Manual">Manual</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>tracción:--}}
+{{--                        <div>--}}
+{{--                            <select name="traccion">--}}
+{{--                                <option value="unknown">Tipo de tracción</option>--}}
+{{--                                <option value="Fwd">Delantera</option>--}}
+{{--                                <option value="Rwd">Rwd</option>--}}
+{{--                                <option value="Awd">Awd</option>--}}
+{{--                                <option value="x_4wd">x_4wd</option>--}}
+{{--                                <option value="x_4x4">4x4</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                 </ul>
-                <button type="submit">Aplicar</button>
-            </form>
+                <button type="submit" onclick="getCarsByParams()">Aplicar</button>
+{{--            </form>--}}
 
 
         </aside>
@@ -175,16 +196,48 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-    function getCarsByCategory(val) {
+    function getCarsByParams(val) {
         let carsContainer = $('#allCars');
-        if (val > 0) {
-            console.log(val);
+        let categoryObj = {'name': 'category_id', 'value': parseInt($('#category')[0].value) };
+        let modelObj = {'name': 'model_id', 'value': parseInt($('#model')[0].value) };
+        let brandObj = {'name': 'brand_id', 'value': parseInt($('#brand')[0].value) };
+        let paramQuery = '';
 
-            $.get(`findCars/?category_id=${val}`, (data, status) => {
+        console.log(categoryObj, brandObj, modelObj);
+        if (categoryObj.value > 0) {
+            if(!paramQuery) {
+                paramQuery += '?'
+            } else {
+                paramQuery += '&';
+            }
+            paramQuery += `category_id=${categoryObj.value}`
+        }
+        if (modelObj.value > 0) {
+            if(!paramQuery) {
+                paramQuery += '?'
+            } else {
+                paramQuery += '&';
+            }
+            paramQuery += `car_model_id=${modelObj.value}`
+        }
+        if (brandObj.value > 0) {
+            if(!paramQuery) {
+                paramQuery += '?'
+            } else {
+                paramQuery += '&';
+            }
+            paramQuery += `brand_id=${brandObj.value}`
+        }
+                console.log(val);
+        if (paramQuery) {
+            $.get(`findCars/${paramQuery}`, (data, status) => {
+                console.log(paramQuery);
+                paramQuery = '';
+                console.log(paramQuery);
                 console.log(data);
                 const carArr = data.data;
                 if ($.isEmptyObject(data.data)) {
-                   carsContainer.html( '<h1>No encontrado ningún coche</h1>');
+                    carsContainer.html( '<h1>No encontrado ningún coche</h1>');
                 } else {
                     let htmlResponse = "";
 
@@ -260,7 +313,11 @@
                 }
 
             });
+        } else {
+            location.reload();
         }
-    };
+
+            }
+
 
 </script>
