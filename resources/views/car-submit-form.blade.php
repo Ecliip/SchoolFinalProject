@@ -20,7 +20,7 @@
             <option value="Gasolina">Gasolina</option>
             <option value="Diesel">Diesel</option>
             <option value="Eléctrico">Eléctrico</option>
-            <option value="Mix">Eléctrico</option>
+            <option value="Mix">Mix</option>
         </select>
         @error('engine')
             <span class="text-error">{{$message}}</span>

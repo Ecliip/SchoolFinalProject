@@ -16,9 +16,29 @@ class CarsController extends Controller
 
 
 
-    public function index() {
-        $cars = Car::latest()->simplePaginate(3);
-        return view('cars')->with(compact('cars'));
+    public function index(Request $request) {
+
+        if ($request->category_id) {
+          $cars = Car::where('category_id', $request->category_id)->latest()->simplePaginate(3);
+        } else {
+            $cars = Car::latest()->simplePaginate(3);
+        }
+
+
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view('cars')->with(compact('cars', 'categories', 'brands', 'request'));
+    }
+
+    public function findCars(Request $request) {
+
+        if ($request->category_id) {
+            $cars = Car::where('category_id', $request->category_id)->latest()->simplePaginate(3);
+        } else {
+            $cars = Car::latest()->simplePaginate(3);
+        }
+
+        return response()->json($cars);
     }
 
     public function showCar($id) {

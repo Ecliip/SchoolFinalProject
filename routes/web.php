@@ -41,6 +41,7 @@ Route::get('/car-model/edit/{id}', [CarModelController::class, 'edit'])->name('e
 Route::post('/car-model/update/{id}', [CarModelController::class, 'update'])->name('update.car-model');
 
 Route::get('cars', [CarsController::class, 'index'])->name('all.car');
+Route::get('findCars', [CarsController::class, 'findCars'])->name('find.car');
 Route::get('car/submit-form', [CarsController::class, 'showAddForm'])->name('submit-form.car')->middleware('auth');
 Route::post('car/add', [CarsController::class, 'add'])->name('add.car')->middleware('auth');
 Route::get('car/getModelsByBrandId/{id}', [CarsController::class, 'getModelsByBrandId'])->name('getByBrandId.car');

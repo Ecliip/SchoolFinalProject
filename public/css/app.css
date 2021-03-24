@@ -8,7 +8,7 @@
 
 .container {
   min-height: 60vh;
-  width: 70vw;
+  width: 100vw;
   background-color: #A8DADC;
   margin: auto;
 }
@@ -225,6 +225,18 @@ table tr .ti-carName {
   margin-left: auto;
   width: 30rem;
   margin-bottom: 2rem;
+}
+
+.container-horizontal {
+  display: flex;
+  justify-content: flex-start;
+}
+
+aside {
+  flex: 0 1 33rem;
+  min-height: 100vh;
+  background: #26546d;
+  margin-right: 2rem;
 }
 
 header {
