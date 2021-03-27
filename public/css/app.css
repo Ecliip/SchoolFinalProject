@@ -102,6 +102,7 @@ section .open-all {
   box-shadow: #2d3748 0 0 2rem;
   justify-content: center;
   align-items: center;
+  min-width: 40rem;
 }
 .car .image-box-sm {
   margin-right: 2rem;
@@ -233,10 +234,36 @@ table tr .ti-carName {
 }
 
 aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 0 1 33rem;
   min-height: 100vh;
-  background: #26546d;
-  margin-right: 2rem;
+  background: transparent;
+  border-right: #26546d 1px solid;
+  padding: 2rem;
+}
+aside ul {
+  list-style: none;
+}
+aside ul li {
+  text-align: center;
+}
+aside ul li:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+aside select {
+  padding: 1rem;
+}
+aside button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+}
+
+.big-col {
+  padding: 0 4rem;
+  flex: 0 1 100rem;
 }
 
 header {

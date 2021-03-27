@@ -3,7 +3,6 @@
 
     <div class="container-horizontal">
         <aside class="aside-col">
-{{--            <form method="get" action="{{route('all.car')}}">--}}
                 <ul>
                     <li>Carroceria:
                         <div>
@@ -35,90 +34,10 @@
                             </select>
                         </div>
                     </li>
-
-{{--                    <li>Precio:--}}
-{{--                        <div>--}}
-{{--                            <select name="precio">--}}
-{{--                                <option value="-1">Elige precio</option>--}}
-{{--                                <option value="3000 - 4999">3000 - 4999</option>--}}
-{{--                                <option value="5000 - 9999">5000 - 9999</option>--}}
-{{--                                <option value="10000 - 19999">10000 - 19999</option>--}}
-{{--                                <option value=">20000">>20000</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>Potencia CV--}}
-{{--                        <div>--}}
-{{--                            <select name="cvs">--}}
-{{--                                <option value="-1">Elige potencia en cv</option>--}}
-{{--                                <option value="50 - 99">50 - 99</option>--}}
-{{--                                <option value="100 - 199">100 - 199</option>--}}
-{{--                                <option value="200 - 499">200 - 499</option>--}}
-{{--                                <option value=">500">>500</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>Combustible:--}}
-{{--                        <div>--}}
-{{--                            <select name="engine">--}}
-{{--                                <option value="unknown">Tipo de combustible</option>--}}
-{{--                                <option value="Gasolina">Gasolina</option>--}}
-{{--                                <option value="Diesel">Diesel</option>--}}
-{{--                                <option value="Eléctrico">Eléctrico</option>--}}
-{{--                                <option value="Mix">Mix</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>Kilómetros:--}}
-{{--                        <div>--}}
-{{--                            <select name="engine">--}}
-{{--                                <option value="unknown">Kilometraje</option>--}}
-{{--                                <option value="0">0</option>--}}
-{{--                                <option value=">1">1</option>--}}
-{{--                                <option value=">10000">10000</option>--}}
-{{--                                <option value="30000">30000</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>puertas:--}}
-{{--                        <div>--}}
-{{--                            <select name="engine">--}}
-{{--                                <option value="unknown">puertas</option>--}}
-{{--                                <option value=">1">1</option>--}}
-{{--                                <option value=">2">2</option>--}}
-{{--                                <option value=">5">>5</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>transmisión:--}}
-{{--                        <div>--}}
-{{--                            <select name="transmission">--}}
-{{--                                <option value="unknown">Tipo de transmisión</option>--}}
-{{--                                <option value="Automático">Automática</option>--}}
-{{--                                <option value="Manual">Manual</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li>tracción:--}}
-{{--                        <div>--}}
-{{--                            <select name="traccion">--}}
-{{--                                <option value="unknown">Tipo de tracción</option>--}}
-{{--                                <option value="Fwd">Delantera</option>--}}
-{{--                                <option value="Rwd">Rwd</option>--}}
-{{--                                <option value="Awd">Awd</option>--}}
-{{--                                <option value="x_4wd">x_4wd</option>--}}
-{{--                                <option value="x_4x4">4x4</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
                 </ul>
-                <button type="submit" onclick="getCarsByParams()">Aplicar</button>
-{{--            </form>--}}
-
-
+                <button type="submit" onclick="getCarsByParams()">Buscar</button>
         </aside>
-        <div class="big-col">
-{{--            {{$request}}--}}
+        <div class="big-col" style="">
             <a class="add_car_btn" href="{{route('submit-form.car')}}">Añadir un coche</a>
             <div id="allCars">
                 @foreach($cars as $car)

@@ -115,6 +115,10 @@ section {
     box-shadow: #2d3748 0 0 2rem;
     justify-content: center;
     align-items: center;
+    min-width: 40rem;
+
+
+
     & .image-box-sm {
         margin-right: 2rem;
     }
@@ -266,10 +270,40 @@ table {
     display: flex;
     justify-content: flex-start;
 }
-
 aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 0 1 33rem;
     min-height: 100vh;
-    background: #26546d;
-    margin-right: 2rem;
+    background: transparent;
+    border-right: #26546d 1px solid;
+    padding: 2rem;
+
+    & ul {
+        list-style: none;
+
+        & li {
+            text-align: center;
+        }
+        & li:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    select {
+        padding: 1rem;
+    }
+
+    button {
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+.big-col {
+    padding: 0 4rem;
+    flex: 0 1 100rem;
 }

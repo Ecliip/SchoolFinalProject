@@ -31,11 +31,6 @@ class Car extends Model
         return $this->belongsTo(CarModel::class);
     }
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
     public function carts() {
         return $this->belongsToMany(Cart::class);
     }
