@@ -160,9 +160,6 @@
                 } else {
                     let htmlResponse = "";
 
-
-
-
                     for (let i = 0; i < carArr.length; i++) {
                         let baseUrl = "{{asset('/')}}";
                         htmlResponse += `                    <div class="car">
@@ -235,8 +232,5 @@
         } else {
             location.reload();
         }
-
             }
-
-
 </script>

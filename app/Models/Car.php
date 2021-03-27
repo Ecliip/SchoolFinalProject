@@ -34,5 +34,4 @@ class Car extends Model
     public function carts() {
         return $this->belongsToMany(Cart::class);
     }
-
 }
