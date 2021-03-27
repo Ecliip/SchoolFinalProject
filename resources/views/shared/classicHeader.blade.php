@@ -34,7 +34,6 @@
             </nav>
         @endif
         <div class="banner">
-
         </div>
     </header>
     <div class="container">

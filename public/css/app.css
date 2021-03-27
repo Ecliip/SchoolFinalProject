@@ -104,6 +104,18 @@ section .open-all {
   align-items: center;
   min-width: 40rem;
 }
+.car h3 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+.car__data {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  font-weight: 400;
+}
 .car .image-box-sm {
   margin-right: 2rem;
 }
@@ -136,6 +148,7 @@ section .open-all {
 .car .car__body ul li {
   display: flex;
   margin: auto;
+  align-items: center;
 }
 .car .car__body ul li .car__mini-title {
   flex: 1;
@@ -264,6 +277,13 @@ aside button {
 .big-col {
   padding: 0 4rem;
   flex: 0 1 100rem;
+}
+
+#allCars a, :link, :active, :visited {
+  color: #F1FAEE;
+  background-color: #4a5568;
+  padding: 1rem 2rem;
+  border-radius: 5px;
 }
 
 header {

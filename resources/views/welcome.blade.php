@@ -3,7 +3,6 @@
     @if($categories->count() > 0)
         <section>
             <h2>Carrocerias mas populares</h2>
-
                 <div class="the-wrapper-25">
                     @foreach($categories as $category)
                         <a href="{{route('all.car')}}">
