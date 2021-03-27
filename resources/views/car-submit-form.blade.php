@@ -128,30 +128,25 @@
 {{--    SCRITPS --}}
     <script>
         function showCurrent(brandId) {
-            if (brandId > 0) {
-                console.log(brandId);
-                $.get(`getModelsByBrandId/${brandId}`, (data, status) => {
-                    console.log(data);
-                    console.log(status);
-
+            if (brandId > 0) { // comprobar que el ID sea mayor de 1
+                $.get(`getModelsByBrandId/${brandId}`, (data, status) => { // AJAX con JQuery
+                    // comprobar si hemos recibido la respuesta alguna del servidor
                     if ($.isEmptyObject(data)) {
-                        $('#selectModel').attr('disabled', true); // works fine
-                        $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
-                    } else {
+                        $('#selectModel').attr('disabled', true); // bloqueamos el boton
+                        $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // generar HTML
+                    } else { // si la matriz no está vacia, generomos HTML con sus opciones
                         let htmlOptions = "";
                         htmlOptions += `<option value=-1>Elige un modelo</option>`
                         for (let i = 0; i < data.length; i++) {
                             htmlOptions += `<option value=${data[i].id}>${data[i].model_name}</option>`
-                            console.log(data[i]);
-                            console.log(htmlOptions);
                         }
-                        $('#selectModel').attr('disabled', false); // works fine
+                        $('#selectModel').attr('disabled', false); // desbloquear el botón
                         $('#selectModel').html(htmlOptions);
                     }
                 })
-            } else {
-                $('#selectModel').attr('disabled', true); // works fine
-                $('#selectModel').html('<option value="-1">Elige un modelo</option>'); // works fine
+            } else { // si el valor recibido es menor que cero o un cero. Bloqueamos el botón
+                $('#selectModel').attr('disabled', true);
+                $('#selectModel').html('<option value="-1">Elige un modelo</option>');
             }
         }
     </script>

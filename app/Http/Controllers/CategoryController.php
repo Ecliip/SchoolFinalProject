@@ -11,16 +11,22 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers
+ */
 class CategoryController extends Controller
 {
-// TODO have to manage exceptions https://laravel.com/docs/8.x/errors#the-exception-handler
-// TODO create admin-pages for Categories/Brands/Model/Cars/
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    // gestiona Categorias, marca, modelos y abre la página de panel de control
     public function showAll() {
         $categories = Category::latest()->get();
         $brands = Brand::latest()->get();
@@ -28,14 +34,18 @@ class CategoryController extends Controller
         return view('dashboard')->with(compact('categories', 'brands', 'carModels'));
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    //agregar carrocería nueva
     public function add(Request $request) {
         $request->validate([
             'cat_name'=>'required|min:3',
             'description'=>'required|min:10|max:2000',
-//            'photo' => 'required|mimes:jpg, jpeg, png'
             'photo' => 'required'
         ]);
-
+        // guarda las imagenes y cambia el tamaño
         $image = $request->file('photo');
         $generatedName = hexdec(uniqid());
         $imgExtension = strtolower($image->getClientOriginalExtension());
@@ -66,11 +76,22 @@ class CategoryController extends Controller
         return redirect()->back()->with('success', 'Category was added successfully');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    // sirve el formulario para modificar una categoría
     public function edit($id) {
         $category = Category::find($id);
         return view('category-edit')->with(compact('category'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    // actualiza una categoría
     public function update(Request $request, $id) {
         $request->validate([
             'cat_name'=>'required|min:3',
@@ -124,6 +145,11 @@ class CategoryController extends Controller
         return redirect()->route('dashboard')->with('success', 'Category was updated');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    // eliminar una categoría
     public function delete($id) {
         $category = Category::find($id);
 

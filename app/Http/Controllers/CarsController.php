@@ -32,7 +32,7 @@ class CarsController extends Controller
     }
 
     public function findCars(Request $request) {
-
+            // según los datos recibidos desde el cliente generaremos una consulta adecuada.
         if ($request->category_id && $request->car_model_id && $request->brand_id) {
             $cars = Car::where('category_id', $request->category_id)
                 ->where('car_model_id', $request->car_model_id)
@@ -57,19 +57,6 @@ class CarsController extends Controller
             $cars = Car::where('brand_id', $request->brand_id)
                 ->latest()->simplePaginate(3);
         }
-
-//        if ($request->category_id) {
-//            $cars = Car::where('category_id', $request->category_id)->latest()->simplePaginate(3);
-//        } else if ($request->car_model_id) {
-//            $cars = Car::where('car_model_id', $request->car_model_id)->latest()->simplePaginate(3);
-//        } else if () {
-//
-//        }
-
-//        else {
-//            $cars = Car::latest()->simplePaginate(3);
-//        }
-
         return response()->json($cars);
     }
 
