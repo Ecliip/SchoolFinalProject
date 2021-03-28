@@ -31,18 +31,23 @@ class CartController extends Controller
     }
 
     public function add($id) {
-        $cart = Cart::firstWhere('user_id', Auth::user()->id);
-        if (!$cart) {
-            Cart::insert([
-               'user_id' => Auth::user()->id,
-            ]);
-        }
+        $record = CarCart::where('car_id', $id)->first();
+        if ($record == null) {
+            $cart = Cart::firstWhere('user_id', Auth::user()->id);
+            if (!$cart) {
+                Cart::insert([
+                    'user_id' => Auth::user()->id,
+                ]);
+            }
 
-        CarCart::insert([
-            'car_id' => $id,
-            'cart_id' =>Auth::user()->cart->id,
-        ]);
-        return redirect()->back()->with('success', 'Has agregado el coche a tu carrito');
+            CarCart::insert([
+                'car_id' => $id,
+                'cart_id' =>Auth::user()->cart->id,
+            ]);
+            return redirect()->back()->with('success', 'Has agregado el coche a tu carrito');
+        } else {
+            return redirect()->back()->with('Ya existe', 'El coche ya está agregado');
+        }
     }
 
     public function delete($id) {
