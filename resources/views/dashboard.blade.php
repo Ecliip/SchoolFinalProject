@@ -1,11 +1,15 @@
 @extends('layouts.admin')
 @section('content')
+    {{--        INICIO MENSAJE DE EXITO      --}}
     @if(session('success'))
         <div class="notification__success">
             {{session('success')}}
         </div>
     @endif
+    {{--        FIN MENSAJE DE EXITO      --}}
+
     <div class="the-wrapper">
+{{--        INICIO FORMULARIO CARROCERIAS      --}}
         <div class="wrapped-col">
             <h2>Añadir una categoria</h2>
             <form class="form" action="{{route('add.category')}}" method="POST" enctype="multipart/form-data">
@@ -36,7 +40,8 @@
                 </div>
             </form>
         </div>
-
+        {{--        FINAL FORMULARIO CARROCERIAS      --}}
+        {{--        INICIO FORMULARIO MARCAS      --}}
         <div class="wrapped-col">
             <h2>Añadir una marca</h2>
             <form class="form" action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
@@ -67,7 +72,8 @@
                 </div>
             </form>
         </div>
-
+        {{--        FINAL FORMULARIO MARCAS      --}}
+        {{--        INICIO FORMULARIO MODELOS      --}}
         <div class="wrapped-col">
             <h2>Añadir un Modelo</h2>
             <form class="form" action="{{route('add.car-model')}}" method="POST" enctype="multipart/form-data">
@@ -122,20 +128,23 @@
                 </div>
             </form>
         </div>
+        {{--        FINAL FORMULARIO MODELOS      --}}
     </div>
-
+    {{--        INICIO FOTOS DE CARROCERIAS, MARCAS, MODELOS      --}}
     <div class="the-wrapper">
+        {{--        INICIO SECCION FOTOS DE CARROCERIAS      --}}
+        @if($categories)
         <div class="wrapped-col">
             <h2>Categorias</h2>
             @foreach($categories as $category)
                 <div class="category__item">
                     <h3 class="category__name">{{$category->cat_name}}</h3>
                     <div class="image-box-sm">
-                        <img src="{{asset($category->photo_sm)}}">
+                        <img src="{{asset($category->photo_sm)}}" alt="Carroceria {{$category->cat_name}}">
                     </div>
                     <div class="buttons-group">
                         <a href="{{route('edit.category', $category->id)}}">Editar</a>
-                        <a href="{{route('delete.category', $category->id)}}">Delete</a>
+                        <a href="{{route('delete.category', $category->id)}}">Eliminar</a>
                     </div>
                 </div>
             @endforeach
@@ -143,8 +152,10 @@
             </div>
 
         </div>
+        @endif
+        {{--        FIN SECCION FOTOS DE CARROCERIAS      --}}
 
-
+        {{--        INICIO SECCION FOTOS DE MARCAS      --}}
         @if($brands)
         <div class="wrapped-col">
             <h2>Marcas</h2>
@@ -152,16 +163,19 @@
                 <div class="category__item">
                     <h3 class="category__name">{{$brand->brand_name}}</h3>
                     <div class="image-box-sm">
-                        <img src="{{asset($brand->photo_sm)}}">
+                        <img src="{{asset($brand->photo_sm)}}" alt="Marca {{$brand->brand_name}}">
                     </div>
                     <div class="buttons-group">
-                        <a href="{{route('edit.brand', $brand->id)}}">Edit</a>
-                        <a href="{{route('delete.brand', $brand->id)}}">Delete</a>
+                        <a href="{{route('edit.brand', $brand->id)}}">Editar</a>
+                        <a href="{{route('delete.brand', $brand->id)}}">Eliminar</a>
                     </div>
                 </div>
             @endforeach
         </div>
         @endif
+        {{--        FIN SECCION FOTOS DE MARCAS      --}}
+
+        {{--        INICIO SECCION FOTOS DE MODELOS DE COCHES      --}}
         @if($carModels)
             <div class="wrapped-col">
                 <h2>Modelos</h2>
@@ -169,18 +183,19 @@
                     <div class="category__item">
                         <h3 class="category__name">{{$carModel->model_name}}</h3>
                         <div class="image-box-sm">
-                            <img src="{{asset($carModel->photo_sm)}}">
+                            <img src="{{asset($carModel->photo_sm)}}" alt="Modelo de coche {{$carModel->mode_name}}">
                         </div>
                         <div>Categoria: {{$carModel->category->cat_name}}</div>
                         <div>Marca: {{$carModel->brand->brand_name}}</div>
                         <div class="buttons-group">
-                            <a href="{{route('edit.car-model', $carModel->id)}}">Edit</a>
-                            <a href="{{route('delete.car-model', $carModel->id)}}">Delete</a>
+                            <a href="{{route('edit.car-model', $carModel->id)}}">Editar</a>
+                            <a href="{{route('delete.car-model', $carModel->id)}}">Eliminar</a>
                         </div>
                     </div>
                 @endforeach
             </div>
         @endif
+        {{--        FIN SECCION FOTOS DE MODELOS DE COCHES      --}}
     </div>
 @endsection
 
