@@ -4,6 +4,7 @@
     @php
         $year = date('Y');
     @endphp
+    {{--        FORMULARIO AGREGAR COCHE        --}}
     <div class="form-container">
     <h2>Añadir un coche <a href="{{route('home.page')}}">supercars.web</a></h2>
     <div class="icon-box">
@@ -125,7 +126,7 @@
         <button class="btn" type="submit">Subir</button>
     </form>
 </div>
-{{--    SCRITPS --}}
+    {{--        SCRITPS     --}}
     <script>
         function showCurrent(brandId) {
             if (brandId > 0) { // comprobar que el ID sea mayor de 1
