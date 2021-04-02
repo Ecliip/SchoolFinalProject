@@ -230,6 +230,10 @@ table {
         font-weight: 600;
         font-size: 2rem;
         color: $imperialRed;
+
+        @media (max-width: 650px) {
+            display: none;
+        }
     }
 
     tr {

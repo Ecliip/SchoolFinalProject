@@ -229,6 +229,11 @@ table thead {
   font-size: 2rem;
   color: #ce272e;
 }
+@media (max-width: 650px) {
+  table thead {
+    display: none;
+  }
+}
 table tr {
   text-align: center;
   margin: 2rem;
