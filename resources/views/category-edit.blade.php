@@ -35,7 +35,7 @@
         </div>
 
         <div class="image-box-sm">
-            <img src="{{asset($category->photo_sm)}}">
+            <img src="{{asset($category->photo_sm)}}" alt="Carroceria {{$category->cat_name}}">
         </div>
     </div>
 @endsection
