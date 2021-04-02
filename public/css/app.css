@@ -131,6 +131,11 @@ section .open-all {
   align-items: center;
   min-width: 40rem;
 }
+@media (max-width: 500px) {
+  .car {
+    min-width: 25rem;
+  }
+}
 .car h3 {
   text-transform: uppercase;
   font-size: 1.8rem;
@@ -271,6 +276,12 @@ table tr .ti-carName {
 .container-horizontal {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+}
+@media (max-width: 1300px) {
+  .container-horizontal {
+    justify-content: center;
+  }
 }
 
 aside {
@@ -278,16 +289,28 @@ aside {
   flex-direction: column;
   align-items: center;
   flex: 0 1 33rem;
-  min-height: 100vh;
   background: transparent;
   border-right: #26546d 1px solid;
   padding: 2rem;
+}
+@media (max-width: 1300px) {
+  aside {
+    min-width: 50vw;
+    border-right: none;
+    border-bottom: #26546d 1px solid;
+    margin-bottom: 2rem;
+  }
 }
 aside ul {
   list-style: none;
 }
 aside ul li {
   text-align: center;
+}
+@media (max-width: 1300px) {
+  aside ul li {
+    display: inline-block;
+  }
 }
 aside ul li:not(:last-of-type) {
   margin-bottom: 2rem;
@@ -304,6 +327,11 @@ aside button {
 .big-col {
   padding: 0 4rem;
   flex: 0 1 100rem;
+}
+@media (max-width: 500px) {
+  .big-col {
+    padding: 0 2rem;
+  }
 }
 
 #allCars a, #allCars :link, #allCars :active, #allCars :visited {
@@ -645,6 +673,7 @@ a.add_car_btn:hover {
   align-items: center;
   border-radius: 10px;
   margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 .image-box-sm img {
   max-width: 100%;

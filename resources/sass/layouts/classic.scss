@@ -117,6 +117,9 @@ section {
     justify-content: center;
     align-items: center;
     min-width: 40rem;
+    @media (max-width: $w500) {
+        min-width: 25rem;
+    }
 
     & h3 {
         text-transform: uppercase;
@@ -282,22 +285,35 @@ table {
 .container-horizontal {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    @media (max-width: 1300px) {
+        justify-content: center;
+    }
+
 }
 aside {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 0 1 33rem;
-    min-height: 100vh;
+    //min-height: 100vh;
     background: transparent;
     border-right: #26546d 1px solid;
     padding: 2rem;
-
+    @media (max-width: 1300px) {
+        //flex: 1;
+        min-width: 50vw;
+        border-right: none;
+        border-bottom: #26546d 1px solid;
+        margin-bottom: 2rem;
+    }
     & ul {
         list-style: none;
-
         & li {
             text-align: center;
+            @media (max-width: 1300px) {
+                display: inline-block;
+            }
         }
         & li:not(:last-of-type) {
             margin-bottom: 2rem;
@@ -319,6 +335,11 @@ aside {
 .big-col {
     padding: 0 4rem;
     flex: 0 1 100rem;
+
+    @media (max-width: $w500) {
+        padding: 0 2rem;
+        //flex: 0 1 100rem;
+    }
 }
 
 #allCars a, #allCars :link, #allCars :active, #allCars :visited {
