@@ -2,6 +2,7 @@
 @section('content')
 
     <div class="container-horizontal">
+        {{--        INICIO FILTRO COCHES       --}}
         <aside class="aside-col">
                 <ul>
                     <li>Carroceria:
@@ -37,6 +38,8 @@
                 </ul>
                 <button type="submit" onclick="getCarsByParams()">Buscar</button>
         </aside>
+        {{--        FINAL FILTRO COCHES       --}}
+        {{--        INICIO LISTADO COCHES       --}}
         <div class="big-col" style="">
             <a class="add_car_btn" href="{{route('submit-form.car')}}">Añadir un coche</a>
             <div id="allCars">
@@ -108,6 +111,7 @@
             </div>
             <a class="add_car_btn" href="{{route('submit-form.car')}}">Añadir un coche</a>
         </div>
+        {{--        FINAL LISTADO COCHES       --}}
     </div>
 
 
