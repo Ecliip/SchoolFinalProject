@@ -35,7 +35,7 @@
         </div>
 
         <div class="image-box-sm">
-            <img src="{{asset($brand->photo_sm)}}">
+            <img src="{{asset($brand->photo_sm)}}" alt="Marca {{$brand->brand_name}}">
         </div>
     </div>
 @endsection

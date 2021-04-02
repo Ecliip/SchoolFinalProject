@@ -16,8 +16,8 @@
                 </div>
                     <div class="right">
                         <p class="name">{{Auth::user()->name}}</p>
-                        <a href="{{ url('user/profile') }}" class="nav-link">Profile</a>
-                        <a href="{{ route('user.logout') }}" class="nav-link">Logout</a>
+{{--                        <a href="{{ url('user/profile') }}" class="nav-link">Profile</a>--}}
+                        <a href="{{ route('user.logout') }}" class="nav-link">Salir</a>
                     </div>
             </nav>
     </header>

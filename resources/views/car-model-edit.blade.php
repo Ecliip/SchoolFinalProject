@@ -59,7 +59,7 @@
         </div>
 
         <div class="image-box-sm">
-            <img src="{{asset($carModel->photo_sm)}}">
+            <img src="{{asset($carModel->photo_sm)}}" alt="">
         </div>
     </div>
 @endsection

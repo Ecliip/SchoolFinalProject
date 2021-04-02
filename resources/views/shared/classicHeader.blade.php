@@ -25,9 +25,9 @@
                     <a href="{{ route('user.logout') }}" class="nav-link">Salir</a>
                     <a href="{{route('all.cart')}}" class="nav-link">Mi Carrito</a>
                 @else
-                    <a href="{{ route('login') }}" class="nav-link">Log in</a>
+                    <a href="{{ route('login') }}" class="nav-link">Entrar</a>
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="nav-link">Register</a>
+                    <a href="{{ route('register') }}" class="nav-link">Registración</a>
                     @endif
                     </div>
                 @endauth

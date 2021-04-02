@@ -7,7 +7,7 @@
     <div class="form-container">
     <h2>Añadir un coche <a href="{{route('home.page')}}">supercars.web</a></h2>
     <div class="icon-box">
-        <img src="{{asset('images/design/clock.png')}}">
+        <img src="{{asset('images/design/clock.png')}}" alt="logo">
     </div>
     <form class="form form__email" method="post" action="{{route('update.car', $car->id)}}" enctype="multipart/form-data">
         @csrf

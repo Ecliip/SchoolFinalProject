@@ -11,7 +11,7 @@
         <input type="password" name="password" placeholder="password" required >
         <button class="btn" type="submit">Entrar</button>
     </form>
-    <a href="{{url('forgot-password')}}">Has olvidado tu contrasena?</a>
+{{--    <a href="{{url('forgot-password')}}">Has olvidado tu contrasena?</a>--}}
 </div>
 @endsection
 
