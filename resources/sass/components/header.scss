@@ -5,12 +5,15 @@ header {
     color: $honeydew;
 
     .logo {
+        display: inline-block;
         text-transform: uppercase;
+        margin-bottom: 1rem;
         & .sufix, & .prefix {
 
             padding: 1rem .5rem;
             transition: .5s;
         }
+
 
         & .prefix {
             background-color: $imperialRed;
@@ -46,14 +49,22 @@ header {
         width: 100vw;
         padding: 0 3rem;
         background-color: $prussianBlue;
+        flex-wrap: wrap;
 
+        & .left {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         & .right {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
 
             & .name {
                 margin-right: 3rem;
+                text-align: center;
             }
         }
 
@@ -63,9 +74,15 @@ header {
 
         & a {
             color: $honeydew;
-            font-size: 2.5rem;
+            font-size: $f-medium;
             padding: 2rem 1rem;
+
+            @media (max-width: $w500) {
+                font-size: $f-small;
+                padding: .5rem .3rem;
+            }
         }
+
     }
 
     & .banner {
@@ -77,3 +94,5 @@ header {
         background-position: center;
     }
 }
+
+

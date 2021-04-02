@@ -137,14 +137,14 @@
         <div class="wrapped-col">
             <h2>Categorias</h2>
             @foreach($categories as $category)
-                <div class="category__item">
+                <div class="category__item mb-2">
                     <h3 class="category__name">{{$category->cat_name}}</h3>
                     <div class="image-box-sm">
                         <img src="{{asset($category->photo_sm)}}" alt="Carroceria {{$category->cat_name}}">
                     </div>
                     <div class="buttons-group">
-                        <a href="{{route('edit.category', $category->id)}}">Editar</a>
-                        <a href="{{route('delete.category', $category->id)}}">Eliminar</a>
+                        <a class="btn" href="{{route('edit.category', $category->id)}}">Editar</a>
+                        <a class="btn" href="{{route('delete.category', $category->id)}}">Eliminar</a>
                     </div>
                 </div>
             @endforeach

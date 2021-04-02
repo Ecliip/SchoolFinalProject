@@ -12,24 +12,24 @@
     <header>
         @if (Route::has('login'))
             <nav class="nav">
-                <div class="center">
+                <div class="left">
                     <a class="logo" href="{{route('home.page')}}"><span class="prefix">Supercars</span><span class="sufix">.web</span></a>
                     <a href="{{route('all.car')}}">Coches nuevos</a>
                     <a href="{{route('all.car')}}">Coches usados</a>
                     <a href="{{route('submit-form.car')}}">Vender mi coche</a>
                 </div>
-                    <div class="right">
-                @auth
-                    <p class="name">{{Auth::user()->name}}</p>
-                    <a href="{{ url('/dashboard') }}" class="nav-link">Configuración</a>
-                    <a href="{{ route('user.logout') }}" class="nav-link">Salir</a>
-                    <a href="{{route('all.cart')}}" class="nav-link">Mi Carrito</a>
-                @else
-                    <a href="{{ route('login') }}" class="nav-link">Entrar</a>
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="nav-link">Registración</a>
-                    @endif
-                    </div>
+                <div class="right">
+            @auth
+                <p class="name">{{Auth::user()->name}}</p>
+                <a href="{{ url('/dashboard') }}" class="nav-link">Configuración</a>
+                <a href="{{ route('user.logout') }}" class="nav-link">Salir</a>
+                <a href="{{route('all.cart')}}" class="nav-link">Mi Carrito</a>
+            @else
+                <a href="{{ route('login') }}" class="nav-link">Entrar</a>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="nav-link">Registración</a>
+                @endif
+                </div>
                 @endauth
             </nav>
         @endif

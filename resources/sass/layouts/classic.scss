@@ -39,6 +39,7 @@ section {
     padding: 2rem 4rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     & .wrapped-col {
         flex: 1 1 30rem;
         margin-right: 2rem;
