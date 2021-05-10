@@ -1,7 +1,7 @@
 # Final Project - web dev - web Commerce
 
-That was final project for my shcool where I have been studying. 
-The idea was to make a e-commerce for cars. So it impements the Main page, cart, pagination pages, product page.
+That was final project for my school where I have been studying. 
+The idea was to make a e-commerce for cars. So it impements the main page, cart, pagination pages, product page also some basic CMS (you can controll the content). As well Authentication and route protection.
 Sure there is a lot of work to imrove the project to make ir real-world e-commerce.
 
 ### Tecnologies
