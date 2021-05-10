@@ -1,3 +1,17 @@
+# Final Project - web dev - web Commerce
+
+That was final project for my shcool where I have been studying. 
+The idea was to make a e-commerce for cars. So it impements the Main page, cart, pagination pages, product page.
+Sure there is a lot of work to imrove the project to make ir real-world e-commerce.
+
+### Tecnologies
+*Laravel
+*AJAX
+*SCSS
+*JQuery for AJAX.
+*MySql
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
